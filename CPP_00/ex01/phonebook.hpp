@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 05:12:58 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/10/19 07:17:13 by tmorikaw         ###   ########.fr       */
+/*   Created: 2023/10/19 06:53:26 by tmorikaw          #+#    #+#             */
+/*   Updated: 2023/10/19 08:08:23 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-int main(int ac, char **av)
+class Phonebook
 {
-	if (ac <= 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-		std::cout << std::endl;
-		return 0;
+	public :
+	int i;
+
+	Phonebook() {
+		i = 1;
 	}
-	else
-	{
-		for (int i = 1; av[i]; i++)
-		{
-			for (int j = 0; av[i][j]; j++)
-				av[i][j] = std::toupper(av[i][j]);
-		}
+
+	void print() {
+		std::cout << "value is : " << i << std::endl;
 	}
-	for (int i = 1; av[i]; i++)
-		std::cout << av[i];
-	std::cout << std::endl;
-	return 0;
-}
+	void dbl() {
+		i *= 2;
+	}
+};
