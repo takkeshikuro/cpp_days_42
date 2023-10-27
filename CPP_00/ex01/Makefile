@@ -10,8 +10,11 @@ NAME		= MyAwesomePhonebook
 PROJECT		= CPP00 - ex01
 CC			= c++
 CFLAGS		= -g3 -std=c++98 -Wall -Wextra -Werror
+#
+INCLUDE		= -I./include
 
-SRC_FILES	= phonebook.cpp
+SRC_FILES	= phonebook.cpp cons_dest.cpp \
+			  contact.cpp utils.cpp
 
 OBJS_DIR	= .objets
 OBJS		= $(SRC_FILES:%.cpp=$(OBJS_DIR)/%.o)
@@ -20,9 +23,9 @@ OBJS		= $(SRC_FILES:%.cpp=$(OBJS_DIR)/%.o)
 
 all : $(NAME)
 
-$(NAME) : $(OBJS_DIR) $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-	@printf "$(RED_TWO)$(PROJECT) compilation [ok]\n"
+$(NAME) : $(OBJS_DIR)  $(OBJS)
+	$(CC) $(CFLAGS) $(INCLUDE) $(OBJS) -o $(NAME)
+	@printf "$(RED_TWO) $(PROJECT) compilation [ok]\n"
 	
 $(OBJS_DIR) :
 	@mkdir -p $(OBJS_DIR)

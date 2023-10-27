@@ -6,20 +6,22 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 08:35:02 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/10/20 08:35:17 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/10/27 03:13:56 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "phonebook.hpp"
+#include "include/phonebook.hpp"
+#include "include/contact.hpp"
 
 Phonebook::Phonebook()
 {
+	std::cout << "Welcom to your phonebook" << std::endl << std::endl;
 	return ;
 }
 
 Phonebook::~Phonebook()
 {
+	std::cout  << std::endl << "goodbye." << std::endl;
 	return ;
 }
 
