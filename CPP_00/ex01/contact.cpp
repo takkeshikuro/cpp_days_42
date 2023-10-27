@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/phonebook.hpp"
-#include "include/contact.hpp"
+#include "include/phonebook.class.hpp"
+#include "include/contact.class.hpp"
 
 std::string	print_ask(std::string line, std::string str)
 {
