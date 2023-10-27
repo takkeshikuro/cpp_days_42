@@ -2,7 +2,7 @@
 # define CONTACT_HPP
 
 #include <iostream>
-#include "phonebook.hpp"
+#include "phonebook.class.hpp"
 
 class Contact
 {
