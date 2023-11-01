@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 10:05:40 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/10/27 10:32:50 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/11/01 03:28:14 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,15 @@ class Zombie
 	Zombie(void);
 	~Zombie(void);
 	
+	void announce( void );
 	std::string get_name() const;
 	void	set_name(std::string str);
 
 	private :
 	std::string name;
-	void announce( void );  
 };
+
+void randomChump( std::string name );
+Zombie* newZombie( std::string name );
 
 #endif

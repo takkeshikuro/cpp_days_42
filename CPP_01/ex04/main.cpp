@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 02:54:15 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/01 03:28:25 by tmorikaw         ###   ########.fr       */
+/*   Created: 2023/11/01 08:30:36 by tmorikaw          #+#    #+#             */
+/*   Updated: 2023/11/01 08:32:11 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/Zombie.hpp"
+#include <iostream>
 
-Zombie* newZombie( std::string name )
+int main(int ac, char **av)
 {
-	Zombie *newZombie;
-
-	newZombie = new Zombie;
-	newZombie->set_name(name);
-	return newZombie;
+    if (ac == 4)
+    {
+        
+    }
+    else
+        std::cout << "error" << std::endl;
+    return 0;
 }

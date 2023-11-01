@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 02:54:15 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/01 03:28:25 by tmorikaw         ###   ########.fr       */
+/*   Created: 2023/11/01 03:49:24 by tmorikaw          #+#    #+#             */
+/*   Updated: 2023/11/01 04:12:34 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/Zombie.hpp"
 
-Zombie* newZombie( std::string name )
+Zombie::Zombie(void)
 {
-	Zombie *newZombie;
+	std::cout << "one zombie is created." << std::endl;
+	return ;
+}
 
-	newZombie = new Zombie;
-	newZombie->set_name(name);
-	return newZombie;
+Zombie::~Zombie(void)
+{
+	std::cout << "one Zombie " << name << " is destroyed." << std::endl;
+	return ;
+}
+
+std::string Zombie::get_name() const {
+	return name;
+}
+
+void    Zombie::set_name(std::string str)
+{
+	this->name = str;
+	return ;
 }

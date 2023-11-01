@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 02:54:15 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/01 03:28:25 by tmorikaw         ###   ########.fr       */
+/*   Created: 2023/11/01 06:06:59 by tmorikaw          #+#    #+#             */
+/*   Updated: 2023/11/01 08:17:25 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/Zombie.hpp"
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
-Zombie* newZombie( std::string name )
+#include <iostream>
+
+class Weapon;
+//detient forcement une weapon
+
+class HumanA
 {
-	Zombie *newZombie;
+	public :
+		HumanA(std::string name, Weapon &weapon);
+		~HumanA(void);
+		void  attack() const;
+	
+	private : 
+		Weapon &_weapon;
+		std::string _name;
+};
 
-	newZombie = new Zombie;
-	newZombie->set_name(name);
-	return newZombie;
-}
+#endif
