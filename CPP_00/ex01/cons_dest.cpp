@@ -6,12 +6,11 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 08:35:02 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/10/27 03:13:56 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/11/02 06:05:48 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/phonebook.class.hpp"
-#include "include/contact.class.hpp"
+#include "include/Phonebook.hpp"
 
 Phonebook::Phonebook()
 {

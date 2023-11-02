@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.class.hpp                                :+:      :+:    :+:   */
+/*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 06:53:26 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/10/27 09:49:32 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/11/02 06:05:30 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 #include <cstdlib> //exit
 #include <sstream> //fake atoi
-#include "contact.class.hpp"
+#include "Contact.hpp"
 
 class Phonebook
 {

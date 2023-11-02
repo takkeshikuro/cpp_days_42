@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   Sed.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 06:06:59 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/02 03:19:52 by tmorikaw         ###   ########.fr       */
+/*   Created: 2023/11/02 01:46:10 by tmorikaw          #+#    #+#             */
+/*   Updated: 2023/11/02 05:39:05 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-# define HUMANA_HPP
+#include "include/Sed.hpp"
 
-#include <iostream>
+Sed::Sed(std::string file, std::string& s1, std::string& s2)
+: _file_name(file), _S1(s1), _S2(s2) {}
 
-class Weapon;
-//detient forcement une weapon
-
-class HumanA
-{
-	public :
-		HumanA(std::string name, Weapon &weapon);
-		~HumanA(void);
-		void  attack() const;
-	
-	private : 
-		Weapon &_weapon;
-		std::string _name;
-};
-
-#endif
+Sed::~Sed() {}

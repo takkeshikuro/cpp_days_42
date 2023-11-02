@@ -6,12 +6,11 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 03:17:12 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/10/27 04:35:59 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/11/02 06:06:35 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/phonebook.class.hpp"
-#include "include/contact.class.hpp"
+#include "include/Phonebook.hpp"
 
 std::string	print_ask(std::string line, std::string str)
 {

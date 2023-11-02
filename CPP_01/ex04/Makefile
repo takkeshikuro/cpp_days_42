@@ -6,12 +6,12 @@ WHITE	= \033[1;37m
 BLINK	= \033[5m
 END		= \033[0m
 
-NAME		= Sed
+NAME		= fakeSed
 PROJECT		= CPP01 - ex04
 CC			= c++
 CFLAGS		= -g3 -std=c++98 -Wall -Wextra -Werror
 INCLUDE		= -I./include
-SRC_FILES	= main.cpp 
+SRC_FILES	= main.cpp Sed.cpp
 # 
 OBJS_DIR	= .objets
 OBJS		= $(SRC_FILES:%.cpp=$(OBJS_DIR)/%.o)
