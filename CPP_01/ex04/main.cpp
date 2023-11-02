@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 08:30:36 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/02 06:03:42 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/11/02 09:45:18 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,19 @@ void	Sed::reading()
 	{
 		std::ofstream ofs((_file_name + ".replace").c_str());
 		std::string line_buf;
+		int i = 0;
 		while (std::getline(ifs, line_buf)) 
 		{
+			if (i != 0)
+				ofs << std::endl;
 			if (ifs.fail())
 			{
 				std::cerr << "error during reading from " << _file_name << std::endl;
 				return ;
 			}
 			swap_occ(line_buf);
-			ofs << line_buf << std::endl;
+			ofs << line_buf;
+			i += 1;
 		}
 		ifs.close();
 		ofs.close();
