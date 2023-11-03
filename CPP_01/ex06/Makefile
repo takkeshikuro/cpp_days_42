@@ -6,11 +6,11 @@ WHITE	= \033[1;37m
 BLINK	= \033[5m
 END		= \033[0m
 
-NAME		= Harl
-PROJECT		= CPP01 - ex05
+NAME		= HarlFilter
+PROJECT		= CPP01 - ex06
 CC			= c++
-CFLAGS		= -g3 -std=c++98 -Wall -Wextra -Werror
-#
+CFLAGS		= -g3 -Wall -std=c++98 -Wextra -Werror
+# 
 INCLUDE		= -I./include
 SRC_FILES	= main.cpp Harl.cpp
 # 
