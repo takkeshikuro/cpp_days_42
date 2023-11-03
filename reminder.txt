@@ -8,3 +8,8 @@ protégeant avec des include guards. Dans le cas contraire, votre note sera de 0
 
 
 -changer makefile (hpp no update)
+- remake cpp01 ex04 pour warning home
+main.cpp: In member function ‘void Sed::swap_occ(std::string&)’:
+main.cpp:20:16: error: type qualifiers ignored on cast result type [-Werror=ignored-qualifiers]
+   20 |         while ((const unsigned long)(index = line.find(_S1, index)) != std::string::npos)
+      |        

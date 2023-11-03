@@ -4,13 +4,13 @@ WHITE   = \033[1;37m
 BLINK   = \033[5m
 END     = \033[0m
 
-NAME        = Zombie
-PROJECT     = CPP01 - ex00
+NAME        = idk
+PROJECT     = CPP02 - ex00
 CC          = c++
 CFLAGS      = -g3 -Wall -std=c++98 -Wextra -Werror
 
 INCLUDE     = -I./include
-SRC_FILES   = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRC_FILES   = main.cpp Fixed.cpp
 
 OBJS_DIR    = .objets
 OBJS        = $(SRC_FILES:%.cpp=$(OBJS_DIR)/%.o)
