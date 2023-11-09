@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 09:18:05 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/09 10:11:23 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/11/09 11:00:28 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,20 +90,28 @@ bool Fixed::operator!=(const Fixed &cpy) const {
 }
 
 Fixed Fixed::operator+(const Fixed &cpy) {
-	return _value + cpy._value;
+	Fixed res;
+	res.setRawBits(_value + cpy._value);
+	return res;
 }
 
 Fixed Fixed::operator-(const Fixed &cpy) {
+	Fixed res;
+	res.setRawBits(_value - cpy._value);
 	return _value - cpy._value;
 }
 
 Fixed Fixed::operator*(const Fixed &cpy) {
-	std::cout << cpy._value << " = _value" << std::endl;
-	return _value * cpy._value;
+	long long product = static_cast<long long>(_value) * cpy._value;
+	Fixed res;
+	res.setRawBits(static_cast<int>(product >> nb_bits));
+	return res;
 }
 
 Fixed Fixed::operator/(const Fixed &cpy) {
-	return _value / cpy._value;
+	if (cpy._value == 0)
+		return Fixed();
+	return Fixed(roundf(toFloat() / cpy.toFloat()));
 }
 
 Fixed &Fixed::operator++() {
