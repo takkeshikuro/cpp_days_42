@@ -5,32 +5,42 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 03:38:29 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/09 07:15:48 by tmorikaw         ###   ########.fr       */
+/*   Created: 2023/11/09 07:11:41 by tmorikaw          #+#    #+#             */
+/*   Updated: 2023/11/09 08:57:13 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/Fixed.hpp"
 
-Fixed::Fixed(void) {
+Fixed::Fixed() {
+	std::cout << "Default constructor called" << std::endl;
 	value = 0;
-	std::cout << "default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed &copy) {
-	value = copy.value;
+Fixed::Fixed(const int n_int) {
+	std::cout << "Int constructor called" << std::endl;
+	value = n_int << nb_bits;
+}
+
+Fixed::Fixed(const float n_flo) {
+	std::cout << "Float constructor called" << std::endl;
+	value = roundf(n_flo * (1 << nb_bits));
+}
+
+Fixed::Fixed(const Fixed &cpy) {
+	value = cpy.value;
 	std::cout << "copy constructor called" << std::endl;
+}
+
+Fixed &Fixed::operator=(const Fixed &cpy) {
+	std::cout << "copy assignment operator called" << std::endl;
+	if (this != &cpy)
+		value = cpy.getRawBits();
+	return *this;
 }
 
 Fixed::~Fixed() {
 	std::cout << "destructor called" << std::endl;
-}
-
-Fixed &Fixed::operator=(const Fixed &copy) {
-	std::cout << "copy assignment operator called" << std::endl;
-	if (this != &copy)
-		value = copy.getRawBits();
-	return *this;
 }
 
 int Fixed::getRawBits() const {
@@ -41,4 +51,16 @@ int Fixed::getRawBits() const {
 void	Fixed::setRawBits(int const raw) {
 	value = raw;
 	std::cout << "setRawBits member function called" << std::endl;
+}
+
+float Fixed::toFloat() const {
+	return static_cast<float>(value) / (1 << nb_bits);
+}
+
+int Fixed::toInt() const {
+	return value >> nb_bits;
+}
+
+std::ostream &operator<<(std::ostream &ostream, const Fixed &cpy) {
+	return ostream << cpy.toFloat();
 }

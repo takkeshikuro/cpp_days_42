@@ -4,8 +4,8 @@ WHITE   = \033[1;37m
 BLINK   = \033[5m
 END     = \033[0m
 
-NAME        = Fixed00
-PROJECT     = CPP02 - ex00
+NAME        = Fixed02
+PROJECT     = CPP02 - ex02
 CC          = c++
 CFLAGS      = -g3 -Wall -std=c++98 -Wextra -Werror
 

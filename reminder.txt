@@ -13,3 +13,6 @@ main.cpp: In member function ‘void Sed::swap_occ(std::string&)’:
 main.cpp:20:16: error: type qualifiers ignored on cast result type [-Werror=ignored-qualifiers]
    20 |         while ((const unsigned long)(index = line.find(_S1, index)) != std::string::npos)
       |        
+
+
+-modif les operateur +/-/*// ex02 fixed.cpp
