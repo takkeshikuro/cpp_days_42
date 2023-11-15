@@ -7,8 +7,8 @@ END     = \033[0m
 NAME        = Fixed02
 PROJECT     = CPP02 - ex02
 CC          = c++
-CFLAGS      = -g3 -Wall  -Wextra -Werror
-#-std=c++98
+CFLAGS      = -g3 -std=c++98 -Wall  -Wextra -Werror
+#
 INCLUDE     = -I./include
 SRC_FILES   = main.cpp Fixed.cpp
 
