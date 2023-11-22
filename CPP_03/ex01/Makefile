@@ -4,13 +4,13 @@ WHITE   = \033[1;37m
 BLINK   = \033[5m
 END     = \033[0m
 
-NAME        = Fixed03
-PROJECT     = CPP02 - ex03
+NAME        = ScavTrap
+PROJECT     = CPP03 - ex01
 CC          = c++
 CFLAGS      = -g3 -Wall -std=c++98 -Wextra -Werror
 
 INCLUDE     = -I./include
-SRC_FILES   = main.cpp Fixed.cpp bsp.cpp Point.cpp
+SRC_FILES   = main.cpp ClapTrap.cpp ScavTrap.cpp
 
 OBJS_DIR    = .objets
 OBJS        = $(SRC_FILES:%.cpp=$(OBJS_DIR)/%.o)

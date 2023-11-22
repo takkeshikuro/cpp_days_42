@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:17:38 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/09 10:24:15 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/11/22 07:40:09 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 #include <iostream>
 #include <cmath>
-#include "Point.hpp"
 
 class Fixed
 {
