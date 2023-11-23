@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.cpp                                          :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 10:23:20 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/23 03:45:17 by tmorikaw         ###   ########.fr       */
+/*   Created: 2023/11/23 07:55:21 by tmorikaw          #+#    #+#             */
+/*   Updated: 2023/11/23 07:55:25 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/Point.hpp"
+#ifndef SCAVTRAP_H
+#define SCAVTRAP_H
 
-Point::Point() : x(0), y(0) {}
+#include "ClapTrap.hpp"
 
-Point::Point(const float a, const float b) : x(a), y(b) {}
+class ScavTrap : public ClapTrap
+{
+	public :
+		ScavTrap(void);
+		ScavTrap(ScavTrap const &cpy);
+		ScavTrap& operator=(ScavTrap const &cpy);
+		ScavTrap(std::string str);
+		~ScavTrap(void);
+		void attack(const std::string &target);
+		void guardGate();
+	private:
+		bool _guarding_gate;
+};
 
-Point::Point(const Point &cpy) : x(cpy.x), y(cpy.y) {}
-
-Point &Point::operator=(const Point &cpy) {
-	(void)cpy;
-	return *this;
-}
-
-Point::~Point() {}
-
-float	Point::get_x() const {
-	return x.toFloat();
-}
-
-float	Point::get_y() const {
-	return y.toFloat();
-}
+#endif

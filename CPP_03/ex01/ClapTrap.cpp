@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 06:12:26 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/22 06:12:28 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/11/23 06:19:03 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,23 @@ ClapTrap::ClapTrap(void) {
 	_attack_damage = 0;
 	std::cout << "default constructor called" << std::endl;
 	std::cout << "new ClapTrap w default name set." << std::endl << std::endl; 
+}
+
+ClapTrap::ClapTrap(ClapTrap const &cpy) {
+	_name = cpy._name;
+	_hit_point = cpy._hit_point;
+	_energy_point = cpy._energy_point;
+	_attack_damage = cpy._attack_damage;
+}
+
+ClapTrap &ClapTrap::operator=(const ClapTrap &cpy) {
+	if (this != &cpy) {
+		_name = cpy._name;
+		_hit_point = cpy._hit_point;
+		_energy_point = cpy._energy_point;
+		_attack_damage = cpy._attack_damage;
+	}
+	return *this;
 }
 
 ClapTrap::ClapTrap(std::string str) {
@@ -91,15 +108,16 @@ void ClapTrap::takeDamage(unsigned int amount) {
 		std::cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << std::endl;
 		std::cout << std::endl;
 	}
-	
-	
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
 	if (_energy_point > 0 && _hit_point > 0)
 	{
 		_energy_point -= 1;
-		_hit_point += amount;
+		if (_hit_point <= UINT_MAX - amount)
+			_hit_point += amount;
+		else
+			_hit_point = UINT_MAX;
 		std::cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << std::endl;
 		std::cout << "ClapTrap " << _name << " regenerates ";
 		std::cout << amount << " health points and look better." << std::endl;

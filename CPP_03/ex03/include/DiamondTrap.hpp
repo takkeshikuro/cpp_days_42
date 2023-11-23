@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.cpp                                          :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 10:23:20 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/23 03:45:17 by tmorikaw         ###   ########.fr       */
+/*   Created: 2023/11/23 07:55:40 by tmorikaw          #+#    #+#             */
+/*   Updated: 2023/11/23 08:10:09 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/Point.hpp"
+#ifndef DIAMONTRAP_HPP
+#define DIAMONTRAP_HPP
 
-Point::Point() : x(0), y(0) {}
+#include "ClapTrap.hpp"
 
-Point::Point(const float a, const float b) : x(a), y(b) {}
+class DiamonTrap 
+{
+    public :
+        DiamondTrap();
+        DiamondTrap(std::string str);
+        DiamondTrap(DiamondTrap const &cpy);
+        DiamondTrap& operator=(DiamondTrap const &cpy);
+        ~DiamondTrap();
+        void whoAmI();
+    private :
+        std::string name;
 
-Point::Point(const Point &cpy) : x(cpy.x), y(cpy.y) {}
+};
 
-Point &Point::operator=(const Point &cpy) {
-	(void)cpy;
-	return *this;
-}
-
-Point::~Point() {}
-
-float	Point::get_x() const {
-	return x.toFloat();
-}
-
-float	Point::get_y() const {
-	return y.toFloat();
-}
+#endif

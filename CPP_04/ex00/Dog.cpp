@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.cpp                                          :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 10:23:20 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/23 03:45:17 by tmorikaw         ###   ########.fr       */
+/*   Created: 2023/11/23 08:37:13 by tmorikaw          #+#    #+#             */
+/*   Updated: 2023/11/23 08:45:33 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/Point.hpp"
+#include "include/Dog.hpp"
 
-Point::Point() : x(0), y(0) {}
+Dog::Dog() {
+    type = "dog";
+	std::cout << "new Dog!! constructor called." << std::endl;
+}
 
-Point::Point(const float a, const float b) : x(a), y(b) {}
-
-Point::Point(const Point &cpy) : x(cpy.x), y(cpy.y) {}
-
-Point &Point::operator=(const Point &cpy) {
+Dog::Dog(Dog const &cpy) {
 	(void)cpy;
+}
+
+Dog &Dog::operator=(Dog const &cpy) {
+    (void)cpy;
 	return *this;
 }
 
-Point::~Point() {}
-
-float	Point::get_x() const {
-	return x.toFloat();
+Dog::~Dog() {
+	std::cout << "Dog destructor called." << std::endl;
 }
 
-float	Point::get_y() const {
-	return y.toFloat();
+void Dog::makeSound() const {
+	std::cout << "waaaaaaaaf" << std::endl;
 }

@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.cpp                                          :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 10:23:20 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/23 03:45:17 by tmorikaw         ###   ########.fr       */
+/*   Created: 2023/11/23 08:33:35 by tmorikaw          #+#    #+#             */
+/*   Updated: 2023/11/23 08:45:24 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/Point.hpp"
+#include "include/Cat.hpp"
 
-Point::Point() : x(0), y(0) {}
+Cat::Cat() {
+	type = "Cat";
+	std::cout << "new cat!! constructor called." << std::endl;
+}
 
-Point::Point(const float a, const float b) : x(a), y(b) {}
+Cat::Cat(Cat const &cpy) {
+	(void)cpy;
+}
 
-Point::Point(const Point &cpy) : x(cpy.x), y(cpy.y) {}
-
-Point &Point::operator=(const Point &cpy) {
+Cat &Cat::operator=(Cat const &cpy) {
 	(void)cpy;
 	return *this;
 }
 
-Point::~Point() {}
-
-float	Point::get_x() const {
-	return x.toFloat();
+Cat::~Cat() {
+	std::cout << "Cat destructor called." << std::endl;
 }
 
-float	Point::get_y() const {
-	return y.toFloat();
+void Cat::makeSound() const {
+	std::cout << "moewwwwwww" << std::endl;
 }

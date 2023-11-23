@@ -6,30 +6,27 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 06:11:27 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/22 06:58:39 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/11/23 04:59:18 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#ifndef SCAVTRAP_H
+#define SCAVTRAP_H
 
-#include <iostream>
-#include <iomanip>
+#include "ClapTrap.hpp"
 
-class ScavTrap 
+class ScavTrap : public ClapTrap
 {
 	public :
-        ScavTrap();
-        ScavTrap(std::string str);
-        ~ScavTrap();
-        
-        
-		
-	private :
-		std::string _name;
-		int _hit_point;
-		int _energy_point;
-		int _attack_damage;
+		ScavTrap(void);
+		ScavTrap(ScavTrap const &cpy);
+		ScavTrap& operator=(ScavTrap const &cpy);
+		ScavTrap(std::string str);
+		~ScavTrap(void);
+		void attack(const std::string &target);
+		void guardGate();
+	private:
+		bool _guarding_gate;
 };
 
 #endif

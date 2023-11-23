@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.cpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 10:23:20 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/23 03:45:17 by tmorikaw         ###   ########.fr       */
+/*   Created: 2023/11/23 08:18:42 by tmorikaw          #+#    #+#             */
+/*   Updated: 2023/11/23 08:19:25 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/Point.hpp"
+#include "include/Animal.hpp"
+#include "include/Cat.hpp"
+#include "include/Dog.hpp"
 
-Point::Point() : x(0), y(0) {}
+int main()
+{
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
 
-Point::Point(const float a, const float b) : x(a), y(b) {}
-
-Point::Point(const Point &cpy) : x(cpy.x), y(cpy.y) {}
-
-Point &Point::operator=(const Point &cpy) {
-	(void)cpy;
-	return *this;
-}
-
-Point::~Point() {}
-
-float	Point::get_x() const {
-	return x.toFloat();
-}
-
-float	Point::get_y() const {
-	return y.toFloat();
+	return 0;
 }

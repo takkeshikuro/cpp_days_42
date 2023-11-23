@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.cpp                                          :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 10:23:20 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/23 03:45:17 by tmorikaw         ###   ########.fr       */
+/*   Created: 2023/11/23 08:13:17 by tmorikaw          #+#    #+#             */
+/*   Updated: 2023/11/23 08:42:43 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/Point.hpp"
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-Point::Point() : x(0), y(0) {}
+#include <iostream>
 
-Point::Point(const float a, const float b) : x(a), y(b) {}
+class Animal
+{
+    public :
+        Animal();
+        Animal(Animal const &cpy);
+        Animal& operator=(Animal const &cpy);
+        ~Animal();
+        std::string getType() const {return type;};
+        void makeSound() const;
+    protected :
+        std::string type;
+};
 
-Point::Point(const Point &cpy) : x(cpy.x), y(cpy.y) {}
-
-Point &Point::operator=(const Point &cpy) {
-	(void)cpy;
-	return *this;
-}
-
-Point::~Point() {}
-
-float	Point::get_x() const {
-	return x.toFloat();
-}
-
-float	Point::get_y() const {
-	return y.toFloat();
-}
+#endif

@@ -5,13 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 06:12:37 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/23 06:28:56 by tmorikaw         ###   ########.fr       */
+/*   Created: 2023/11/23 07:52:18 by tmorikaw          #+#    #+#             */
+/*   Updated: 2023/11/23 07:52:31 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/ClapTrap.hpp"
 #include "include/ScavTrap.hpp"
+#include "include/FragTrap.hpp"
 
 #include <climits>  // UINT_MAX
 
@@ -46,12 +47,23 @@ void ScavTrapTests(const std::string &player) {
 	std::endl(std::cout);
 }
 
+void FragTrapTests(const std::string &player) {
+	std::cout << GREEN "[FragTrap Tests]" RESET << std::endl;
+	FragTrap fragtrap("robot_BIS");
+	std::endl(std::cout);
+
+	fragtrap.attack(player);
+	fragtrap.highFivesGuys();
+	std::endl(std::cout);
+}
+
 int main() {
 	std::string player = "tak";
 
 	ClapTrapTests(player);
 	std::endl(std::cout);
 	ScavTrapTests(player);
+    FragTrapTests(player);
 }
 
 /* int main(void)
