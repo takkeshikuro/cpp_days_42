@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:23:20 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/22 09:18:45 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/11/23 01:12:53 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,18 @@ Point::Point() : x(8), y(0) {
 }
 
 Point::Point(const float a, const float b) : x(a), y(b) {
-	_x = a;
-	_y = b;
 	std::cout << "in this instance now : x=" << x << ", y=" << y << std::endl;
 }
 
-Point::Point(const Point &cpy) {
+/* Point::Point(const Point &cpy) {
 	(void)cpy;
 //	std::cout << "cpy constructor called" << std::endl;
-}
+} */
 
+Point::Point(const Point &cpy) : x(cpy.x), y(cpy.y){
+    (void)cpy;
+//    std::cout << "cpy constructor called" << std::endl;
+}
 
 Point &Point::operator=(const Point &cpy) {
 	(void)cpy;
@@ -36,6 +38,8 @@ Point &Point::operator=(const Point &cpy) {
 		y = cpy.y; */
 	return *this;
 }
+
+
 
 Point::~Point() {
 //	std::cout << "destructor called" << std::endl;
