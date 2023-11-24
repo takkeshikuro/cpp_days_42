@@ -10,7 +10,7 @@ CC          = c++
 CFLAGS      = -g3 -Wall -std=c++98 -Wextra -Werror
 
 INCLUDE     = -I./include
-SRC_FILES   = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRC_FILES   = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 OBJS_DIR    = .objets
 OBJS        = $(SRC_FILES:%.cpp=$(OBJS_DIR)/%.o)

@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 08:20:04 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/24 05:14:10 by tmorikaw         ###   ########.fr       */
+/*   Created: 2023/11/24 04:53:59 by tmorikaw          #+#    #+#             */
+/*   Updated: 2023/11/24 05:13:53 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/Animal.hpp"
+#include "include/WrongAnimal.hpp"
 
-Animal::Animal() {
-	this->type = "Animal";
-	std::cout << "New animal (main constructor called)" << std::endl;
+WrongAnimal::WrongAnimal() {
+    this->type = "WrongAnimal";
+	std::cout << "New WrongAnimal (main constructor called)" << std::endl;
 }
 
-Animal::Animal(Animal const &cpy) {
+WrongAnimal::WrongAnimal(WrongAnimal const &cpy) {
 	type = cpy.type;
 }
 
-Animal& Animal::operator=(Animal const &cpy) {
+WrongAnimal& WrongAnimal::operator=(WrongAnimal const &cpy) {
 	if (this != &cpy)
 		type = cpy.type;
 	return *this;
 }
 
-Animal::~Animal() {
-	std::cout << "Animal destructor called." << std::endl;
+WrongAnimal::~WrongAnimal() {
+	std::cout << "WrongAnimal destructor called." << std::endl;
 }
 
-void Animal::makeSound() const {
-	std::cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << std::endl;	
-	std::cout << "normal sounddd" << std::endl;
+void WrongAnimal::makeSound() const {
+    std::cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << std::endl;	
+	std::cout << "Wrong animal sounddd" << std::endl;
 	std::cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << std::endl;	
 	std::cout << std::endl;
 }

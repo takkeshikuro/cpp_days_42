@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 08:13:17 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/24 05:18:34 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/11/24 06:22:25 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define ANIMAL_HPP
 
 #include <iostream>
+#include <cstdlib> // exit
+#include <new>
 
 class Animal
 {

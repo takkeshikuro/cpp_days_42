@@ -16,3 +16,6 @@ main.cpp:20:16: error: type qualifiers ignored on cast result type [-Werror=igno
 
 
 -modif les operateur +/-/*// ex02 fixed.cpp
+
+-refaire teste diamontrap cpp3 ex3
+

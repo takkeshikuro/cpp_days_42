@@ -1,28 +1,16 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 07:52:18 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/23 07:52:31 by tmorikaw         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "include/ClapTrap.hpp"
 #include "include/ScavTrap.hpp"
 #include "include/FragTrap.hpp"
-
+#include "include/DiamondTrap.hpp"
+#include <iostream> //cout, endl
 #include <climits>  // UINT_MAX
-
 
 # define GREEN "\033[32m"
 # define RESET "\033[0m"
 
 void ClapTrapTests(const std::string &player) {
 	std::cout << GREEN "[ClapTrap Tests]" RESET << std::endl;
-	ClapTrap claptrap("joe");
+	ClapTrap claptrap("CL4P-TP");
 	std::endl(std::cout);
 
 	claptrap.attack(player);
@@ -38,7 +26,7 @@ void ClapTrapTests(const std::string &player) {
 
 void ScavTrapTests(const std::string &player) {
 	std::cout << GREEN "[ScavTrap Tests]" RESET << std::endl;
-	ScavTrap scavtrap("mr_robot");
+	ScavTrap scavtrap("SC4V-TP");
 	std::endl(std::cout);
 
 	scavtrap.attack(player);
@@ -47,9 +35,10 @@ void ScavTrapTests(const std::string &player) {
 	std::endl(std::cout);
 }
 
+
 void FragTrapTests(const std::string &player) {
 	std::cout << GREEN "[FragTrap Tests]" RESET << std::endl;
-	FragTrap fragtrap("robot_BIS");
+	FragTrap fragtrap("FR4G-TP");
 	std::endl(std::cout);
 
 	fragtrap.attack(player);
@@ -57,28 +46,26 @@ void FragTrapTests(const std::string &player) {
 	std::endl(std::cout);
 }
 
+void DiamondTrapTests(const std::string &player) {
+	std::cout << GREEN "[DiamondTrap Tests]" RESET << std::endl;
+	DiamondTrap diamondtrap("DI4M0ND-TP");
+	std::endl(std::cout);
+
+	diamondtrap.printAttributes();
+	diamondtrap.attack(player);
+	diamondtrap.whoAmI();
+
+	std::endl(std::cout);
+}
+
 int main() {
-	std::string player = "tak";
+	std::string player = "Wilhelm";
 
 	ClapTrapTests(player);
 	std::endl(std::cout);
 	ScavTrapTests(player);
-    FragTrapTests(player);
+	std::endl(std::cout);
+	FragTrapTests(player);
+	std::endl(std::cout);
+	DiamondTrapTests(player);
 }
-
-/* int main(void)
-{
-	ClapTrap tak("tak");
-	ClapTrap joe("joe");
-
-	tak.attack(joe.get_name());
-	joe.takeDamage(tak.get_attack_damage());
-	joe.beRepaired(2);
-	joe.attack(tak.get_name());
-	tak.takeDamage(joe.get_attack_damage());
-
-    ScavTrap prince("prince");
-    prince.attack(joe.get_name());
-	
-	return 0;
-} */

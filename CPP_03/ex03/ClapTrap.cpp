@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 07:53:40 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/23 07:53:42 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/11/24 07:33:53 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,17 @@ ClapTrap::ClapTrap(void) {
 	_hit_point = 10;
 	_energy_point = 10;
 	_attack_damage = 0;
-	std::cout << "default constructor called" << std::endl;
+	std::cout << "[CLAPTRAP] default constructor called" << std::endl;
 	std::cout << "new ClapTrap w default name set." << std::endl << std::endl; 
+}
+
+ClapTrap::ClapTrap(std::string str) {
+	_name = str;
+	_hit_point = 10;
+	_energy_point = 10;
+	_attack_damage = 0;
+	std::cout << "[CLAPTRAP] normal constructor called" << std::endl;
+	std::cout << "(new ClapTrap " << str << ") name set." << std::endl  << std::endl; 
 }
 
 ClapTrap::ClapTrap(ClapTrap const &cpy) {
@@ -38,18 +47,11 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &cpy) {
 	return *this;
 }
 
-ClapTrap::ClapTrap(std::string str) {
-	_name = str;
-	_hit_point = 10;
-	_energy_point = 10;
-	_attack_damage = 0;
-	std::cout << "[normal constructor called]" << std::endl;
-	std::cout << "(new ClapTrap " << str << ") name set." << std::endl  << std::endl; 
-}
+
 
 ClapTrap::~ClapTrap(void) {
 	std::cout << "(ClapTrap " << _name << ")";
-	std::cout << " destructor called" << std::endl;
+	std::cout << " [CLAPTRAP] destructor called" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target) {

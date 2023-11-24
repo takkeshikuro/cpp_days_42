@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 08:18:42 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/24 05:19:39 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/11/24 06:52:10 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,35 @@
 #include "include/Dog.hpp"
 #include "include/WrongAnimal.hpp"
 #include "include/WrongCat.hpp"
+#include "include/Brain.hpp"
 
+#include <sstream>
+
+std::string iToStr(int i) {
+	std::stringstream ss;
+	ss << i;
+	return ss.str();
+}
+
+int main() {
+	std::cout <<  "[Test 3]"  << std::endl;
+	Cat cat;
+	std::endl(std::cout);
+
+	for (int i = 0; i < 30; i++)
+		cat.SetIdea("it's " + iToStr(i + 1), i);
+	cat.DisplayIdea();
+	std::endl(std::cout);
+	
+	Cat copy(cat);
+	std::cout << "cat address: " << &cat << ", copy address:" << &copy << std::endl;
+	std::cout << "type of copy is : " << copy.getType() << std::endl;
+	copy.DisplayIdea();
+	std::endl(std::cout);
+	
+	std::endl(std::cout);
+}
 /* int main()
-{
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-
-	return 0;
-} */
-
-
-int main()
 {
 	const Animal* meta = new Animal();
 	const Animal* dog = new Dog();
@@ -57,4 +69,4 @@ int main()
 	delete wrongA;
 	delete wrongcat;
 	return 0;
-}
+} */

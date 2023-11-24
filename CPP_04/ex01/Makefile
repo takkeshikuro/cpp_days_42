@@ -4,13 +4,14 @@ WHITE   = \033[1;37m
 BLINK   = \033[5m
 END     = \033[0m
 
-NAME        = Animal
-PROJECT     = CPP04 - ex00
+NAME        = Brain
+PROJECT     = CPP04 - ex01
 CC          = c++
 CFLAGS      = -g3 -Wall -std=c++98 -Wextra -Werror
 
 INCLUDE     = -I./include
-SRC_FILES   = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+SRC_FILES   = main.cpp Animal.cpp Dog.cpp Cat.cpp \
+			  WrongAnimal.cpp WrongCat.cpp Brain.cpp
 
 OBJS_DIR    = .objets
 OBJS        = $(SRC_FILES:%.cpp=$(OBJS_DIR)/%.o)

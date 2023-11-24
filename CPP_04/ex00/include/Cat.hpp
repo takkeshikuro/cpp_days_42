@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 08:16:27 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/23 08:42:16 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/11/24 04:52:58 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 
 class Cat : public Animal
 {
-    public :
-        Cat();
-        Cat(Cat const &cpy);
-        Cat& operator=(Cat const &cpy);
-        ~Cat();
-        virtual void makeSound() const;
+	public :
+		Cat();
+		Cat(Cat const &cpy);
+		Cat& operator=(Cat const &cpy);
+		~Cat();
+		void makeSound() const;
 };
 
 #endif

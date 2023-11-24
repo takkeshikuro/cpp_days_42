@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 08:13:17 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/24 05:18:34 by tmorikaw         ###   ########.fr       */
+/*   Created: 2023/11/24 05:22:48 by tmorikaw          #+#    #+#             */
+/*   Updated: 2023/11/24 06:53:43 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
 #include <iostream>
 
-class Animal
+class Brain
 {
 	public :
-		Animal();
-		Animal(Animal const &cpy);
-		Animal& operator=(Animal const &cpy);
-		virtual ~Animal();
-		virtual void makeSound() const;
-		std::string getType() const {return type;};
-	protected :
-		std::string type;
+		Brain();
+		Brain(const Brain &cpy);
+		Brain& operator=(const Brain &cpy);
+		~Brain();
+		
+		const std::string &GetIdea(int i) const;
+		void SetIdea(std::string idea, int i);
+	private :
+		std::string ideas[100];
+		
+		static const std::string no_idea;
+
 };
 
 #endif

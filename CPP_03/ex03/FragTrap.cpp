@@ -6,18 +6,17 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 07:54:04 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/23 08:31:13 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/11/24 07:45:21 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/FragTrap.hpp"
 
 FragTrap::FragTrap(void) : ClapTrap() {
-	_name = "default_name";
 	_hit_point = 100;
 	_energy_point = 100;
 	_attack_damage = 30;
-	std::cout << "default constructor FLAGTRAP called" << std::endl;
+	std::cout << "[FRAGTRAP] default constructor called" << std::endl;
 	std::cout << "new FragTrap with default name set." << std::endl << std::endl; 
 }
 
@@ -26,7 +25,7 @@ FragTrap::FragTrap(std::string str) {
 	_hit_point = 100;
 	_energy_point = 100;
 	_attack_damage = 30;
-	std::cout << "[normal FLAGTRAP constructor called]" << std::endl;
+	std::cout << "[FRAGTRAP] normal constructor called" << std::endl;
 	std::cout << "(new FragTrap " << str << ") name set." << std::endl  << std::endl; 
 }
 
@@ -48,8 +47,8 @@ FragTrap &FragTrap::operator=(const FragTrap &cpy) {
 }
 
 FragTrap::~FragTrap(void) {
-	std::cout << "(FLAGTRAP " << _name << ")";
-	std::cout << " destructor called" << std::endl;
+	std::cout << "(FRAGTRAP " << _name << ")";
+	std::cout << " [FRAGTRAP] destructor called" << std::endl;
 }
 
 void FragTrap::highFivesGuys(void) {

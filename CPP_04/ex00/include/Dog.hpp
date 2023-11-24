@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 08:37:52 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/23 08:42:21 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/11/24 04:33:15 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Dog : public Animal
         Dog(Dog const &cpy);
         Dog& operator=(Dog const &cpy);
         ~Dog();
-        virtual void makeSound() const;
+        void makeSound() const;
 };
 
 #endif

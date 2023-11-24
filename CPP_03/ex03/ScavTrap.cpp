@@ -6,18 +6,17 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 07:53:22 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/23 07:53:24 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/11/24 07:40:31 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/ScavTrap.hpp"
 
 ScavTrap::ScavTrap(void) : ClapTrap(), _guarding_gate(false) {
-	_name = "default_name";
 	_hit_point = 100;
 	_energy_point = 50;
 	_attack_damage = 20;
-	std::cout << "default SCAVTRAP constructor called" << std::endl;
+	std::cout << "[SCAVTRAP] default constructor called" << std::endl;
 	std::cout << "new ScavTrap with default name set." << std::endl << std::endl; 
 }
 
@@ -26,7 +25,7 @@ ScavTrap::ScavTrap(std::string str) : _guarding_gate(false) {
 	_hit_point = 100;
 	_energy_point = 50;
 	_attack_damage = 20;
-	std::cout << "[normal constructor called]" << std::endl;
+	std::cout << "[SCAVTRAP] normal constructor called" << std::endl;
 	std::cout << "(new ScavTrap " << str << ") name set." << std::endl  << std::endl; 
 }
 
@@ -49,7 +48,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &cpy) {
 
 ScavTrap::~ScavTrap(void) {
 	std::cout << "(ScavTrap " << _name << ")";
-	std::cout << " SCAVTRAP destructor called" << std::endl;
+	std::cout << " [SCAVTRAP] destructor called" << std::endl;
 }
 
 void	ScavTrap::attack(const std::string& target) 
