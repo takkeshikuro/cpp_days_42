@@ -23,7 +23,7 @@ DiamondTrap::DiamondTrap(void) : ClapTrap(), ScavTrap(), FragTrap() {
 
 DiamondTrap::DiamondTrap(std::string str)
 : ClapTrap(str + "_clap_name"), ScavTrap(), FragTrap(), name(_name) {
-	name = str;
+//	name = str; (plus besoin)
 	_hit_point = FragTrap::default_hp;
 	_energy_point = ScavTrap::default_energy_points;
 	_attack_damage = FragTrap::default_attack_damage;
