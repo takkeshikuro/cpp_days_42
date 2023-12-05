@@ -6,15 +6,15 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 08:37:13 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/05 00:59:19 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/05 01:11:27 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/Dog.hpp"
 
-Dog::Dog() : Animal() {
+Dog::Dog() : AAnimal() {
     this->type = "Dog";
-	std::cout << "New Dog constructor called (inherit from Animal)." << std::endl;
+	std::cout << "New Dog constructor called (inherit from AAnimal)." << std::endl;
 	this->brain = new Brain();
 	if (!this->brain) {
 		std::cerr << "alloc error" << std::endl;
@@ -22,7 +22,7 @@ Dog::Dog() : Animal() {
 	}
 }
 
-Dog::Dog(Dog const &cpy) : Animal(cpy), brain(NULL) {
+Dog::Dog(Dog const &cpy) : AAnimal(cpy), brain(NULL) {
 	std::cout << "Dog copy constructor called" << std::endl;
 	this->brain = new Brain(*cpy.brain);
 	if (!this->brain) {
@@ -34,7 +34,7 @@ Dog::Dog(Dog const &cpy) : Animal(cpy), brain(NULL) {
 Dog &Dog::operator=(Dog const &cpy) {
     std::cout << "Dog copy assignment operator called" << std::endl;
 	if (this != &cpy) {
-		Animal::operator=(cpy);
+		AAnimal::operator=(cpy);
 		delete brain;
 		this->brain = new Brain(*cpy.brain);
 		if (!this->brain) {

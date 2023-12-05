@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 08:33:35 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/24 06:56:46 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/05 00:58:32 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ Cat::~Cat() {
 
 void Cat::makeSound() const {
 	std::cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << std::endl;	
-	std::cout << "waaaaaaaaf" << std::endl;
+	std::cout << "miaou" << std::endl;
 	std::cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << std::endl;	
 	std::cout << std::endl;
 }
