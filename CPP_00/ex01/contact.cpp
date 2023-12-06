@@ -19,7 +19,7 @@ std::string	print_ask(std::string line, std::string str)
 	while (ok)
 	{
 		std::cout << str;
-		if (!std::getline (std::cin,line))
+		if (!std::getline(std::cin,line))
             error(2);
 		if (!noblank(line))
 			ok = 0;
