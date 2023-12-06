@@ -10,9 +10,8 @@ CC          = c++
 CFLAGS      = -g3 -Wall -std=c++98 -Wextra -Werror
 
 INCLUDE     = -I./include
-SRC_FILES   = main.cpp Animal.cpp Dog.cpp Cat.cpp \
-			  WrongAnimal.cpp WrongCat.cpp Brain.cpp \
-			  AAnimal.cpp
+SRC_FILES   = main.cpp AMateria.cpp Character.cpp Cure.cpp \
+				Ice.cpp MateriaSource.cpp
 
 OBJS_DIR    = .objets
 OBJS        = $(SRC_FILES:%.cpp=$(OBJS_DIR)/%.o)

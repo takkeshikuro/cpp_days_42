@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 04:25:38 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/05 05:07:39 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/06 02:18:08 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <string>
 #include <cstdlib> //exit
 #include <sstream>
+#include "AMateria.hpp"
 
 class AMateria;
 

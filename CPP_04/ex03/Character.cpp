@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 05:44:41 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/05 06:06:52 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/06 03:08:53 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Character::Character() : ICharacter(), name("") {
 	
-	std::cout << "default character constructor called" << std::endl;
+//	std::cout << "default character constructor called" << std::endl;
 	int i = 0;
 	while (i < 4) {
 		inventory[i++] = NULL;
@@ -23,7 +23,7 @@ Character::Character() : ICharacter(), name("") {
 
 Character::Character(std::string const &name) : ICharacter() {
 
-	std::cout << "normal character constructor called" << std::endl;
+//	std::cout << "normal character constructor called" << std::endl;
 	this->name = name;
 	int i = 0;
 	while (i < 4) {
@@ -33,7 +33,7 @@ Character::Character(std::string const &name) : ICharacter() {
 
 
 Character::Character(Character const &cpy) : ICharacter(cpy), name(cpy.name) {
-	std::cout << "cpy character constructor called" << std::endl;
+//	std::cout << "cpy character constructor called" << std::endl;
 	for (int i = 0; i < 4; i++) {
 		if (cpy.inventory[i])
 			inventory[i] = cpy.inventory[i];
@@ -43,7 +43,7 @@ Character::Character(Character const &cpy) : ICharacter(cpy), name(cpy.name) {
 }
 
 Character &Character::operator=(Character const &cpy) {
-	std::cout << "operator Character = called" << std::endl;
+//	std::cout << "operator Character = called" << std::endl;
 	if (this != &cpy) 
 	{
 		this->name = cpy.name;
@@ -59,7 +59,7 @@ Character &Character::operator=(Character const &cpy) {
 }
 
 Character::~Character() {
-	std::cout << "Character destructor called" << std::endl;
+//	std::cout << "Character destructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 		delete inventory[i];
 }
