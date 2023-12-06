@@ -22,7 +22,7 @@ void Phonebook::search_contact()
 	std::cout << "|     index|  fst name|  lst name|  nickname|" << std::endl;
 	std::cout << "|-------------------------------------------|" << std::endl;
 	while (contacts[++ctc].index > 0)
-		contacts[ctc].print_tab_line();
+		contacts[ctc].print_tab_line(); // a refaire ducoup iomanips
 	while (42)
 	{
 		if (ctc == 0) {
@@ -30,7 +30,7 @@ void Phonebook::search_contact()
 			return ;
 		}
 		std::cout << "which contact ?" << std::endl << "(index)>";
-		if (!std::getline (std::cin,str_index))
+		if (!std::getline(std::cin,str_index))
 			error(3);
 		if (!only_digit(str_index) && str_index.length() == 1) {
 			int_index = fake_atoi(str_index);
@@ -67,7 +67,7 @@ void	Phonebook::go_phonebook(void)
 	{
 		std::cout << std::endl << "command accepted : ADD/SEARCH/EXIT" << std::endl;
 		std::cout << ">";
-		if (!std::getline (std::cin,command))
+		if (!std::getline(std::cin,command))
 			error(1);
 		if (command == "ADD" && command.length() == 3)
 		{
