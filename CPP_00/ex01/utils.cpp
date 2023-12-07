@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 08:40:33 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/07 01:07:45 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/07 03:23:28 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,3 @@ int Phonebook::only_digit(const std::string& str)
 	}
 	return 0;
 }
-

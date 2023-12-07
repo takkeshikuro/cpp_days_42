@@ -1,16 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 08:34:42 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/07 02:38:32 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/07 03:23:20 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/Phonebook.hpp"
+
+Phonebook::Phonebook()
+{
+	std::cout << "Welcom to your phonebook" << std::endl << std::endl;
+	return ;
+}
+
+Phonebook::~Phonebook()
+{
+	std::cout  << std::endl << "goodbye." << std::endl;
+	return ;
+}
 
 void Phonebook::search_contact()
 {
@@ -87,9 +99,13 @@ void	Phonebook::go_phonebook(void)
 
 }
 
-int	main(void)
+int	main(int ac, char **av)
 {
-	Phonebook Phonebook;
-	Phonebook.go_phonebook();
-	return 0;
+	(void)av;
+	if (ac == 1)
+	{
+		Phonebook Phonebook;
+		Phonebook.go_phonebook();
+		return 0;
+	}
 }

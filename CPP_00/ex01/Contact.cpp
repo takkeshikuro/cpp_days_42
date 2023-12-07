@@ -1,16 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.cpp                                        :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 03:17:12 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/07 01:39:11 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/07 03:20:09 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/Phonebook.hpp"
+
+Contact::Contact()
+{
+	return ;
+}
+
+Contact::~Contact()
+{
+	return ;
+}
 
 std::string	print_ask(std::string line, std::string str)
 {
