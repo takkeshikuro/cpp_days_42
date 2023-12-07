@@ -18,15 +18,15 @@
 class Zombie
 {
 	public :
-	Zombie(void);
-	~Zombie(void);
+		Zombie(void);
+		~Zombie(void);
 	
-	void announce( void );
-	std::string get_name() const;
-	void	set_name(std::string str);
+		void announce( void );
+		std::string get_name() const;
+		void	set_name(std::string str);
 
 	private :
-	std::string name;
+		std::string name;
 };
 
 void randomChump( std::string name );
