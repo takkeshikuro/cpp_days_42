@@ -12,7 +12,7 @@
 
 #include "include/Zombie.hpp"
 
-void Zombie::announce( void )
+void Zombie::announce( void ) // a mettre dans zombie.cpp
 {
 	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 } 
