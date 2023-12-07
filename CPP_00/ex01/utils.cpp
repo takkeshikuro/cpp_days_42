@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 08:40:33 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/02 06:06:13 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/07 01:07:45 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,17 @@ void	error(int ok)
 	std::exit(1);
 }
 
+std::string if_tab(const std::string s)
+{
+	std::string ok = s;
+
+	for (std::size_t i = 0; i < s.length(); i++) {
+		if (std::isspace(s[i]))
+			ok[i] = ' ';
+	}
+	return ok;
+}
+
 int noblank(std::string line)
 {
 	int i = 0;
@@ -32,13 +43,6 @@ int noblank(std::string line)
 	while (std::isspace(line[i]))
 	{
 		if (!line[i + 1])
-			return 1;
-		i++;
-	}
-	i = 0;
-	while (line[i] != '\0')
-	{
-		if (!std::isprint(line[i]))
 			return 1;
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 08:34:42 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/02 06:06:05 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/07 02:38:32 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@ void Phonebook::search_contact()
 	int			int_index;
 	int 		ctc = -1;
 
-	std::cout << "|-------------------------------------------|" << std::endl;
+	std::cout << "|" << std::setfill ('-') << std::setw (44) << "|" << std::endl;
 	std::cout << "|     index|  fst name|  lst name|  nickname|" << std::endl;
-	std::cout << "|-------------------------------------------|" << std::endl;
-	while (contacts[++ctc].index > 0)
-		contacts[ctc].print_tab_line(); // a refaire ducoup iomanips
+	std::cout << "|" << std::setfill ('-') << std::setw (44) << "|" << std::endl;
+	
+	while (ctc < 8 && contacts[++ctc].index > 0)
+		contacts[ctc].print_tab_line();
+	
 	while (42)
 	{
 		if (ctc == 0) {

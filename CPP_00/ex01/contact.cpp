@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 03:17:12 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/02 06:06:35 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/07 01:39:11 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ std::string	print_ask(std::string line, std::string str)
 	{
 		std::cout << str;
 		if (!std::getline(std::cin,line))
-            error(2);
+			error(2);
 		if (!noblank(line))
 			ok = 0;
 		else
@@ -41,55 +41,32 @@ void Contact::add_contact()
 	return ;
 }
 
+void get_one_line(std::string var, int ok)
+{
+	std::string str_cut;
+	std::string rm_tab = if_tab(var);
+
+	if (var.length() <= 10) {
+		std::cout << "|" << std::setfill (' ') << std::setw (10);
+		std::cout << rm_tab;
+	}
+	else {
+		str_cut = rm_tab.substr(0, 9);
+		std::cout << "|" << str_cut << ".";
+	}
+	if (ok)
+		std::cout << "|" << std::endl;
+	return ;
+}
+
 void Contact::print_tab_line()
 {
-	int i;
-	std::string str_cut;
-
-	std::cout << "|         " << index;
-	if (_first_name.length() <= 10)
-	{
-		i = 0;
-		std::cout << "|";
-		while (++i <= 10 - (int)_first_name.length())
-			std::cout << " ";
-		std::cout << _first_name;
-	}
-	else
-	{
-		std::cout << "|";
-		str_cut = _first_name.substr(0, 9);
-		std::cout << str_cut << ".";
-	}
-	if (_last_name.length() <= 10)
-	{
-		i = 0;
-		std::cout << "|";
-		while (++i <= 10 - (int)_last_name.length())
-			std::cout << " ";
-		std::cout << _last_name;
-	}
-	else
-	{
-		std::cout << "|";
-		str_cut = _last_name.substr(0, 9);
-		std::cout << str_cut << ".";
-	}
-	if (_nickname.length() <= 10)
-	{
-		i = 0;
-		std::cout << "|";
-		while (++i <= 10 - (int)_nickname.length())
-			std::cout << " ";
-		std::cout << _nickname << "|" << std::endl;
-	}
-	else
-	{
-		std::cout << "|";
-		str_cut = _nickname.substr(0, 9);
-		std::cout << str_cut << ".|" << std::endl;
-	}
-	std::cout << "|-------------------------------------------|" << std::endl;
+	std::cout << "|";
+	std::cout << std::setfill (' ') << std::setw (10) << index;
+	get_one_line(_first_name, 0);
+	get_one_line(_last_name, 0);
+	get_one_line(_nickname, 1);
+	std::cout << "|" << std::setfill ('-') << std::setw (44) << "|" << std::endl;
 }
 
 void	Contact::print_index_found()
