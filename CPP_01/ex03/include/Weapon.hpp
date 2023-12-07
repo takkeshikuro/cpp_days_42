@@ -24,7 +24,8 @@ class Weapon
 		Weapon(std::string str);
 		~Weapon(void);
 
-		const std::string getType(void) const;
+		const std::string getType(void) const; // attention ->
+		//The getType() function returns a const reference to the type string.
 		void setType(std::string str);
 		
 	private :
