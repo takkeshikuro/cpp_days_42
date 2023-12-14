@@ -37,8 +37,8 @@ bool bsp(Point const a, Point const b, Point const c, Point const point)
 	float Area1 = bsp_dig(point, a, b);
 	float Area2 = bsp_dig(point, a, c);
 	float Area3 = bsp_dig(point, b, c);
-	std::cout << "main area is " << area << " and a1/a2/a3 are : ";
-	std::cout << Area1 << "/" << Area2 << "/" << Area3 << std::endl;
+	std::cout << "main area is " << area << " and a1/a2/a3 are : "; // a supp attention
+	std::cout << Area1 << "/" << Area2 << "/" << Area3 << std::endl; // ca aussi
 	if (Area1 == 0 || Area2 == 0 || Area3 == 0)
 		return false;
 	if ((Area1 + Area2 + Area3) == area)
