@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 06:09:54 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/01 08:21:59 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/14 04:39:25 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,21 @@
 #include <iostream>
 
 class Weapon;
-//pas tjr de weapon
+//pas tjr de weapon donc *weapon
 
 class HumanB
 {
-  public :
-	HumanB(void);
-	HumanB(std::string name);
-	HumanB(std::string name, Weapon *weapon);
-	~HumanB(void);
-  
-  void  attack() const;
-  void setWeapon(Weapon &weapon);
-  
-  private : 
-  Weapon *_weapon;
-  std::string _name;
+	public :
+		HumanB(std::string name);
+		HumanB(std::string name, Weapon *weapon);
+		~HumanB(void);
+		
+		void  attack() const;
+		void setWeapon(Weapon &weapon);
+	
+	private : 
+		Weapon *_weapon;
+		std::string _name;
 };
 
 #endif

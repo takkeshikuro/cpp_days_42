@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 06:06:59 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/14 04:30:48 by tmorikaw         ###   ########.fr       */
+/*   Created: 2023/10/19 06:53:26 by tmorikaw          #+#    #+#             */
+/*   Updated: 2023/12/07 03:08:32 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-# define HUMANA_HPP
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
 #include <iostream>
+#include <cstdlib> //exit
+#include <sstream> //fake atoi
+#include <iomanip> 
+#include "Contact.hpp"
 
-class Weapon;
-//detient forcement une weapon donc &weapon
-
-class HumanA
+class Phonebook
 {
 	public :
-		HumanA(std::string name, Weapon &weapon);
-		~HumanA(void);
-		void  attack() const;
-	
-	private : 
-		Weapon &_weapon;
-		std::string _name;
+		Phonebook(void);
+		~Phonebook(void);
+		
+		void go_phonebook();  
+		void search_contact();
+		int only_digit(const std::string& str);
+		void init_index();
+
+	private :
+		Contact contacts[8];
 };
+
+int		fake_atoi(const std::string& str);
+void	error(int ok);
 
 #endif

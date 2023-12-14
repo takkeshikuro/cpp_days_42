@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keshikuro <keshikuro@student.42.fr>        +#+  +:+       +#+        */
+/*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 05:54:15 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/03 14:21:14 by keshikuro        ###   ########.fr       */
+/*   Updated: 2023/12/14 04:40:52 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ class Weapon
 		Weapon(std::string str);
 		~Weapon(void);
 
-		const std::string getType(void) const; // attention ->
-		//The getType() function returns a const reference to the type string.
+		const std::string& getType(void) const;
 		void setType(std::string str);
 		
 	private :

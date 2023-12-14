@@ -6,18 +6,11 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 03:47:59 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/01 04:22:56 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/14 03:29:16 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/Zombie.hpp"
-
-
-void Zombie::announce( void )
-{
-	std::cout << this->name << ": BraiiiiiiinnnzzzZ...";
-	std::cout << std::endl;
-}
 
 int main(void)
 {

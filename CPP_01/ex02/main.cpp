@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 04:25:00 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/01 05:48:32 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/14 04:09:24 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,33 +21,23 @@ int main(void)
 	std::cout << "addr de str : " << &str << std::endl;
 	std::cout << "addr stocke dans PTR : " << stringPTR << std::endl;
 	std::cout << "addr stocke dans REF : " << &stringREF << std::endl;
-	
+
 	std::cout << "valeur de str : " << str << std::endl;
 	std::cout << "valeur pointe par PTR : " << *stringPTR << std::endl;
 	std::cout << "valeur pointe par REF : " << stringREF << std::endl;
 	return 0;
 }
 
-/*
-1- Vous déclarez une chaîne de caractères str contenant la valeur "HI THIS IS BRAIN".
+/*Éviter la copie inutile : Lorsqu'une fonction est appelée avec un objet 
+en tant que paramètre, la copie de cet objet peut être évitée en utilisant 
+une référence. Cela peut améliorer les performances, surtout pour des objets volumineux.
 
-2- Vous créez un pointeur stringPTR de type std::string* qui pointe vers 
-l'adresse mémoire de la chaîne str en utilisant l'opérateur &. 
-Cela signifie que stringPTR stocke l'adresse mémoire où str est stockée.
+Modification d'objets : Les références permettent de modifier l'objet référencé. 
+Si une référence est passée à une fonction, 
+toute modification de l'objet à l'intérieur de la fonction affectera l'objet d'origine.
 
-3- Vous créez une référence stringREF de type std::string& qui référence la variable str. 
-Cela signifie que stringREF est un alias de str ; les deux variables se réfèrent 
-à la même zone mémoire.
+Les références ne peuvent pas être nulles. 
+Une référence doit être initialisée lors de sa déclaration, ce qui élimine le risque 
+de pointer vers une zone mémoire non valide.
 
-4- Vous utilisez std::cout pour afficher les adresses et les valeurs des variables :
-#Vous affichez l'adresse de str avec &str.
-#Vous affichez l'adresse stockée dans stringPTR qui est l'adresse de str.
-#Vous affichez l'adresse stockée dans stringREF qui est également l'adresse de str.
-#Vous affichez la valeur de str, qui est la chaîne de caractères "HI THIS IS BRAIN".
-#Vous affichez la valeur pointée par stringPTR avec *stringPTR, ce qui donne également 
-la chaîne de caractères "HI THIS IS BRAIN".
-#Vous affichez la valeur référencée par stringREF, qui est également la chaîne 
-de caractères "HI THIS IS BRAIN".
-
-Toutes les sorties devraient être identiques car str, stringPTR, et stringREF font 
-référence à la même chaîne de caractères et partagent la même adresse mémoire.*/
+*/

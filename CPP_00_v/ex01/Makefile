@@ -4,13 +4,13 @@ WHITE   = \033[1;37m
 BLINK   = \033[5m
 END     = \033[0m
 
-NAME        = ZombieHorde
-PROJECT     = CPP01 - ex01
+NAME        = Phonebook
+PROJECT     = CPP00 - ex01
 CC          = c++
 CFLAGS      = -g3 -std=c++98 -Wall -Wextra -Werror
 INCLUDE     = -I./include
-SRC_FILES   = main.cpp Zombie.cpp zombieHorde.cpp
-HEADER_FILES = include/Zombie.hpp
+SRC_FILES   = Phonebook.cpp Contact.cpp utils.cpp 
+HEADER_FILES = include/Phonebook.hpp include/Contact.hpp
 
 OBJS_DIR    = .objets
 OBJS        = $(SRC_FILES:%.cpp=$(OBJS_DIR)/%.o)
