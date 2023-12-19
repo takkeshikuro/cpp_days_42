@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 07:07:33 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/23 01:36:32 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/19 03:48:07 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,19 @@ bool bsp(Point const a, Point const b, Point const c, Point const point)
 	float Area1 = bsp_dig(point, a, b);
 	float Area2 = bsp_dig(point, a, c);
 	float Area3 = bsp_dig(point, b, c);
-	std::cout << "main area is " << area << " and a1/a2/a3 are : "; // a supp attention
-	std::cout << Area1 << "/" << Area2 << "/" << Area3 << std::endl; // ca aussi
+
+	std::cout << "[TRIANGLE'S AREA] = " << area << std::endl << "[AREAS a1/a2/a3] = ";
+	std::cout << Area1 << "/" << Area2 << "/" << Area3 << std::endl;
 	if (Area1 == 0 || Area2 == 0 || Area3 == 0)
+	{
+		std::cout << "Point search can't be on the side/top of the main triangle." << std::endl;
 		return false;
+	}
 	if ((Area1 + Area2 + Area3) == area)
+	{
+		std::cout << "a1 + a2 + a3 = main area!!" << std::endl; 
 		return true;
+	}
 	else
 		return false;
 }

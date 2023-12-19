@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 02:33:18 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/09 05:13:32 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/19 01:29:27 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,9 @@
 class Fixed
 {
 	public :
-	
 		Fixed();
 		Fixed(const Fixed &copy);
 		~Fixed();
-		
 		Fixed &operator=(const Fixed &copy);
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );
@@ -30,8 +28,6 @@ class Fixed
 	private :
 		int value;
 		static const int nb_bits = 8;
-		
 };
-
 
 #endif
