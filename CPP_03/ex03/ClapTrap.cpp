@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 07:53:40 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/24 07:33:53 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/20 02:45:27 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ ClapTrap::ClapTrap(void) {
 	_hit_point = 10;
 	_energy_point = 10;
 	_attack_damage = 0;
-	std::cout << "[CLAPTRAP] default constructor called" << std::endl;
-	std::cout << "new ClapTrap w default name set." << std::endl << std::endl; 
+	std::cout << "[Default constructor CLAPTRAP called]" << std::endl;
+	std::cout << "New ClapTrap with default name set." << std::endl << std::endl; 
 }
 
 ClapTrap::ClapTrap(std::string str) {
@@ -26,8 +26,8 @@ ClapTrap::ClapTrap(std::string str) {
 	_hit_point = 10;
 	_energy_point = 10;
 	_attack_damage = 0;
-	std::cout << "[CLAPTRAP] normal constructor called" << std::endl;
-	std::cout << "(new ClapTrap " << str << ") name set." << std::endl  << std::endl; 
+	std::cout << "[Normal constructor CLAPTRAP called]" << std::endl;
+	std::cout << "New ClapTrap " << str << " name set." << std::endl  << std::endl; 
 }
 
 ClapTrap::ClapTrap(ClapTrap const &cpy) {
@@ -47,38 +47,51 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &cpy) {
 	return *this;
 }
 
-
-
 ClapTrap::~ClapTrap(void) {
-	std::cout << "(ClapTrap " << _name << ")";
-	std::cout << " [CLAPTRAP] destructor called" << std::endl;
+	std::cout << "[ClapTrap " << _name << " destructor called]" << std::endl;
+}
+
+std::string ClapTrap::get_name() const {
+	return _name;
+}
+
+int	ClapTrap::get_attack_damage() const {
+	return _attack_damage;
+}
+
+int ClapTrap::get_energy_point() const {
+	return _energy_point;
+}
+
+int ClapTrap::get_hit_point() const {
+	return _hit_point;
 }
 
 void ClapTrap::attack(const std::string& target) {
 	if (_energy_point > 0 && _hit_point > 0)
 	{
 		_energy_point -= 1;
-		std::cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << std::endl;
-		std::cout << "ClapTrap " << _name << " attacks " << target;
+		std::cout << "----------------------------------------------------------" << std::endl;
+		std::cout << "| ClapTrap " << _name << " attacks " << target;
 		std::cout << ", causing " << _attack_damage << " points of damage!" << std::endl;
-		std::cout << _name << " has now " <<_energy_point << " energy points and ";
+		std::cout << "| " << _name << " has now " <<_energy_point << " energy points and ";
 		std::cout << _hit_point << " health point." << std::endl;
-		std::cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << std::endl;
+		std::cout << "----------------------------------------------------------" << std::endl;
 		std::cout << std::endl;
 	}
 	else
 	{
 		if (_energy_point <= 0) {
-			std::cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << std::endl;
-			std::cout << "ClapTrap " << _name << " doesn't have enough energy point! ";
-			std::cout << target << " is lucky and nothing happened." << std::endl;
-			std::cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << std::endl;
+			std::cout << "----------------------------------------------------------" << std::endl;
+			std::cout << "| ClapTrap " << _name << " doesn't have enough energy point!" << std::endl;
+			std::cout << "| " << target << " is lucky and nothing happened." << std::endl;
+			std::cout << "----------------------------------------------------------" << std::endl;
 			std::cout << std::endl;
 		}
 		else if (_hit_point <= 0) {
-			std::cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << std::endl;
-			std::cout << "ClapTrap " << _name << " is dead!!";
-			std::cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << std::endl;
+			std::cout << "----------------------------------------------------------" << std::endl;
+			std::cout << "| ClapTrap " << _name << " is dead!!";
+			std::cout << "----------------------------------------------------------" << std::endl;
 			std::cout << std::endl;
 		}
 		
@@ -91,23 +104,23 @@ void ClapTrap::takeDamage(unsigned int amount) {
 	if (hp_left > 0)
 	{
 		_hit_point -= amount;
-		std::cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << std::endl;
-		std::cout << "ClapTrap " << _name << " took " << amount << " damage! ";
+		std::cout << "----------------------------------------------------------" << std::endl;
+		std::cout << "| ClapTrap " << _name << " took " << amount << " damage! ";
 		if (amount == 0)
 			std::cout << "so it's ok lol" << std::endl;
 		else
 			std::cout << "but he can resist the attack! " << std::endl;
-		std::cout << _name << " has now " << _hit_point << " hp." << std::endl;
-		std::cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << std::endl;
+		std::cout << "| " << _name << " has now " << _hit_point << " hp." << std::endl;
+		std::cout << "----------------------------------------------------------" << std::endl;
 		std::cout << std::endl;
 	}
 	else if (hp_left <= 0)
 	{
 		_hit_point =  0;
-		std::cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << std::endl;
-		std::cout << "ClapTrap " << _name << " took " << amount << " damage! ";
-		std::cout << _name << " died..." << std::endl;
-		std::cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << std::endl;
+		std::cout << "----------------------------------------------------------" << std::endl;
+		std::cout << "| ClapTrap " << _name << " took " << amount << " damage! ";
+		std::cout << "| " << _name << " died..." << std::endl;
+		std::cout << "----------------------------------------------------------" << std::endl;
 		std::cout << std::endl;
 	}
 }
@@ -120,21 +133,21 @@ void ClapTrap::beRepaired(unsigned int amount) {
 			_hit_point += amount;
 		else
 			_hit_point = UINT_MAX;
-		std::cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << std::endl;
-		std::cout << "ClapTrap " << _name << " regenerates ";
+		std::cout << "----------------------------------------------------------" << std::endl;
+		std::cout << "| ClapTrap " << _name << " regenerates ";
 		std::cout << amount << " health points and look better." << std::endl;
-		std::cout << _name << " has now " <<_energy_point << " energy points and ";
+		std::cout << "| " << _name << " has now " <<_energy_point << " energy points and ";
 		std::cout << _hit_point << " health points." << std::endl;
-		std::cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << std::endl;
+		std::cout << "----------------------------------------------------------" << std::endl;
 		std::cout << std::endl;
 	}
 	else
 	{
-		std::cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << std::endl;
-		std::cout << "ClapTrap " << _name << " doesn't have enough energy point! ";
-		std::cout << "He can't regenerates and looks weakened..." << std::endl;
-		std::cout << _name << " has only " << _hit_point << " health points." << std::endl;
-		std::cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << std::endl;		
+		std::cout << "----------------------------------------------------------" << std::endl;
+		std::cout << "| ClapTrap " << _name << " doesn't have enough energy point! " << std::endl;
+		std::cout << "| He can't regenerates and looks weakened..." << std::endl;
+		std::cout << "| " << _name << " has only " << _hit_point << " health points." << std::endl;
+		std::cout << "----------------------------------------------------------" << std::endl;
 		std::cout << std::endl;
 	}
 }

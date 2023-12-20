@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 07:54:59 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/23 07:55:06 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/20 02:46:01 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@ class ClapTrap
 {
 	public :
 		ClapTrap(void);
+		ClapTrap(std::string str);
 		ClapTrap(ClapTrap const &cpy);
 		ClapTrap& operator=(ClapTrap const &cpy);
-		ClapTrap(std::string str);
 		~ClapTrap(void);
 		
-		std::string get_name() const {return _name;};
-		int	get_attack_damage() const {return _attack_damage;};
-		int get_energy_point() const {return _energy_point;};
-		int get_hit_point() const {return _hit_point;};
+		std::string get_name() const;
+		int	get_attack_damage() const;
+		int get_energy_point() const;
+		int get_hit_point() const;
 		
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);

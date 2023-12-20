@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 07:55:11 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/24 07:12:29 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/20 02:49:50 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class FragTrap : virtual public ClapTrap
 		FragTrap(FragTrap const &cpy);
 		FragTrap& operator=(FragTrap const &cpy);
 		~FragTrap();
+
 		void highFivesGuys(void);
 		
 	protected:

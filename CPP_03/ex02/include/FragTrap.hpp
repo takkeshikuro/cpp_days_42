@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 07:23:31 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/23 07:39:38 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/20 02:38:50 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class FragTrap : public ClapTrap
 		FragTrap(FragTrap const &cpy);
 		FragTrap& operator=(FragTrap const &cpy);
 		~FragTrap();
+
 		void highFivesGuys(void);
 };
 

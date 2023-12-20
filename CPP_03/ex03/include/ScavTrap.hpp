@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 07:55:21 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/24 07:35:12 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/20 02:47:34 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class ScavTrap : virtual public ClapTrap
 		ScavTrap& operator=(ScavTrap const &cpy);
 		ScavTrap(std::string str);
 		~ScavTrap(void);
+
 		void attack(const std::string &target);
 		void guardGate();
 		
