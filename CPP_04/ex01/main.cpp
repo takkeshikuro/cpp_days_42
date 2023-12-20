@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 08:18:42 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/24 06:52:10 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/20 07:30:43 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,23 @@ std::string iToStr(int i) {
 }
 
 int main() {
+	std::cout << std::endl;
 	std::cout <<  "[Test 3]"  << std::endl;
+	std::cout << std::endl;
+	
 	Cat cat;
-	std::endl(std::cout);
-
 	for (int i = 0; i < 30; i++)
 		cat.SetIdea("it's " + iToStr(i + 1), i);
 	cat.DisplayIdea();
-	std::endl(std::cout);
 	
+	std::cout << std::endl;
 	Cat copy(cat);
+	std::cout << std::endl;
+	
 	std::cout << "cat address: " << &cat << ", copy address:" << &copy << std::endl;
 	std::cout << "type of copy is : " << copy.getType() << std::endl;
-	copy.DisplayIdea();
-	std::endl(std::cout);
-	
+	std::cout << std::endl;
+	copy.DisplayIdea();	
 	std::endl(std::cout);
 }
 /* int main()

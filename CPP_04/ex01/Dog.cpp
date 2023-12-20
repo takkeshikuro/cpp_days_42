@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 08:37:13 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/05 00:59:19 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/20 07:29:09 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 Dog::Dog() : Animal() {
     this->type = "Dog";
-	std::cout << "New Dog constructor called (inherit from Animal)." << std::endl;
+	std::cout << "[New Dog constructor called] (inherit from Animal)." << std::endl;
+	std::cout << std::endl;
 	this->brain = new Brain();
 	if (!this->brain) {
 		std::cerr << "alloc error" << std::endl;
@@ -23,7 +24,8 @@ Dog::Dog() : Animal() {
 }
 
 Dog::Dog(Dog const &cpy) : Animal(cpy), brain(NULL) {
-	std::cout << "Dog copy constructor called" << std::endl;
+	std::cout << "[Dog copy constructor called]" << std::endl;
+	std::cout << std::endl;
 	this->brain = new Brain(*cpy.brain);
 	if (!this->brain) {
 		std::cerr << "alloc error" << std::endl;
@@ -32,7 +34,8 @@ Dog::Dog(Dog const &cpy) : Animal(cpy), brain(NULL) {
 }
 
 Dog &Dog::operator=(Dog const &cpy) {
-    std::cout << "Dog copy assignment operator called" << std::endl;
+    std::cout << "[Dog copy assignment operator called]" << std::endl;
+	std::cout << std::endl;
 	if (this != &cpy) {
 		Animal::operator=(cpy);
 		delete brain;
@@ -47,13 +50,13 @@ Dog &Dog::operator=(Dog const &cpy) {
 
 Dog::~Dog() {
 	delete brain;
-	std::cout << "Dog destructor called." << std::endl;
+	std::cout << "[Dog destructor called.]" << std::endl;
 }
 
 void Dog::makeSound() const {
-	std::cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << std::endl;	
-	std::cout << "waaaaaaaaf" << std::endl;
-	std::cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << std::endl;	
+	std::cout << "------------------------------" << std::endl;	
+	std::cout << "| waaaaaaaaf" << std::endl;
+	std::cout << "------------------------------" << std::endl;	
 	std::cout << std::endl;
 }
 

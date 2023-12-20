@@ -6,25 +6,29 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 05:06:05 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/06 03:09:52 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/20 07:52:17 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/MateriaSource.hpp"
 
 MateriaSource::MateriaSource() : IMateriaSource() {
-//	std::cout << "M-Source default constructor called" << std::endl;
+//	std::cout << "[MateriaSource default constructor called]" << std::endl;
+//	std::cout << std::endl;
 	for (int i = 0; i < 4; i++)
 		learnedMaterias[i] = NULL;
 }
 
+//copy et operator= ???
+
 MateriaSource::~MateriaSource() {
+	//	std::cout << "[MateriaSource destructor called]" << std::endl;
+	//	std::cout << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 		if (learnedMaterias[i])
 			delete learnedMaterias[i];
 	}
-//	std::cout << "M-Source destructor called" << std::endl;
 }
 
 void MateriaSource::learnMateria(AMateria* m) {

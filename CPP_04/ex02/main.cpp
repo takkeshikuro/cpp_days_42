@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 08:18:42 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/05 01:13:11 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/20 07:44:53 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,33 +24,35 @@
 # define RESET "\033[0m"
 
 void test1() {
-	std::cout << GREEN "[Test]" RESET << std::endl;
+	std::cout << std::endl;
+	std::cout << GREEN "[Test 1]" RESET << std::endl;
+	std::cout << std::endl;
+	
 	const Cat cat;
-	std::endl(std::cout);
-
 	cat.makeSound();
 	cat.AAnimal::makeSound();
-	std::endl(std::cout);
+	std::cout << std::endl;
 }
 
 void test2() {
+	std::cout << std::endl;
 	std::cout << GREEN  "[Test Pointer Ver.]" RESET << std::endl;
-	const AAnimal *cat = new Cat();
-	std::endl(std::cout);
+	std::cout << std::endl;
 
+	const AAnimal *cat = new Cat();
 	cat->makeSound();
 	cat->AAnimal::makeSound();
-	std::endl(std::cout);
-
 	delete cat;
+	std::endl(std::cout);
 }
 
 void test3() {
+	std::cout << std::endl;
 	std::cout << GREEN  "[Test Reference Ver.]" RESET << std::endl;
+	std::cout << std::endl;
+
 	const Cat cat;
 	const AAnimal &ref = cat;
-	std::endl(std::cout);
-
 	ref.makeSound();
 	ref.AAnimal::makeSound();
 	std::endl(std::cout);
@@ -58,9 +60,7 @@ void test3() {
 
 int main() {
 	test1();
-	std::endl(std::cout);
 	test2();
-	std::endl(std::cout);
 	test3();
 	// system("leaks ex02");
 

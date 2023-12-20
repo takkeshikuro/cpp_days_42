@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 08:20:04 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/24 06:36:18 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/20 07:34:03 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,31 @@
 
 Animal::Animal() {
 	this->type = "Animal";
-	std::cout << "New animal (main constructor called)" << std::endl;
+	std::cout << "[New animal main constructor called]" << std::endl;
+	std::cout << std::endl;
 }
 
 Animal::Animal(Animal const &cpy) {
-	std::cout << "Animal copy constuctor called." << std::endl;
+	std::cout << "[Animal copy constuctor called.]" << std::endl;
+	std::cout << std::endl;
 	type = cpy.type;
 }
 
 Animal& Animal::operator=(Animal const &cpy) {
+	std::cout << "[Animal copy operator called]" << std::endl;
+	std::cout << std::endl;
 	if (this != &cpy)
 		type = cpy.type;
 	return *this;
 }
 
 Animal::~Animal() {
-	std::cout << "Animal destructor called." << std::endl;
+	std::cout << "[Animal destructor called.]" << std::endl;
 }
 
 void Animal::makeSound() const {
-	std::cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << std::endl;	
-	std::cout << "normal sounddd" << std::endl;
-	std::cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << std::endl;	
+	std::cout << "------------------------------" << std::endl;	
+	std::cout << "| normal sounddd" << std::endl;
+	std::cout << "------------------------------" << std::endl;	
 	std::cout << std::endl;
 }
