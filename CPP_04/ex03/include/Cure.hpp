@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 02:25:47 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/05 06:29:25 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/27 06:05:19 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,9 @@ class Cure : public AMateria
 		Cure(Cure const &cpy);
 		Cure& operator=(Cure const &cpy);
 		~Cure();
+
         AMateria* clone() const;
         void use(ICharacter &target);
-	private :
-	
 };
 
 #endif

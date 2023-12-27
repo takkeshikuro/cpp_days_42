@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 08:37:13 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/20 07:39:55 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/27 04:29:17 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ Dog::Dog() : AAnimal() {
     this->type = "Dog";
 	std::cout << "[New Dog constructor called] (inherit from AAnimal)." << std::endl;
 	std::cout << std::endl;
+
 	this->brain = new Brain();
 	if (!this->brain) {
 		std::cerr << "alloc error" << std::endl;
@@ -26,6 +27,7 @@ Dog::Dog() : AAnimal() {
 Dog::Dog(Dog const &cpy) : AAnimal(cpy), brain(NULL) {
 	std::cout << "[Dog copy constructor called]" << std::endl;
 	std::cout << std::endl;
+
 	this->brain = new Brain(*cpy.brain);
 	if (!this->brain) {
 		std::cerr << "alloc error" << std::endl;
@@ -36,8 +38,8 @@ Dog::Dog(Dog const &cpy) : AAnimal(cpy), brain(NULL) {
 Dog &Dog::operator=(Dog const &cpy) {
     std::cout << "[Dog copy assignment operator called]" << std::endl;
 	std::cout << std::endl;
+
 	if (this != &cpy) {
-		AAnimal::operator=(cpy);
 		delete brain;
 		this->brain = new Brain(*cpy.brain);
 		if (!this->brain) {

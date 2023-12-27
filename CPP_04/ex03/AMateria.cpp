@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 01:22:54 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/20 07:48:01 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/27 06:05:00 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ AMateria& AMateria::operator=(AMateria const &cpy) {
 
 AMateria::~AMateria() {
 //	std::cout << "[AMateria destructor called]" << std::endl;
+}
+
+std::string const & AMateria::getType() const {
+	return type;
 }
 
 void AMateria::use(ICharacter& target) {

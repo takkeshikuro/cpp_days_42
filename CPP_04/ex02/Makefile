@@ -9,10 +9,10 @@ PROJECT     = CPP04 - ex02
 CC          = c++
 CFLAGS      = -std=c++98 -Wall -Wextra -Werror
 INCLUDE     = -I./include
-SRC_FILES   = main.cpp Animal.cpp Cat.cpp Dog.cpp \
-			  WrongAnimal.cpp WrongCat.cpp Brain.cpp AAnimal.cpp
+SRC_FILES   = main.cpp Cat.cpp Dog.cpp WrongAnimal.cpp \
+			  WrongCat.cpp Brain.cpp AAnimal.cpp
 
-HEADER_FILES = include/Animal.hpp include/Cat.hpp include/Brain.hpp include/AAnimal.hpp\
+HEADER_FILES = include/Cat.hpp include/Brain.hpp include/AAnimal.hpp\
 			   include/Dog.hpp include/WrongAnimal.hpp include/WrongCat.hpp
 
 OBJS_DIR    = .objets

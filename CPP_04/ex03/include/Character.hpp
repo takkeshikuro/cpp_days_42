@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 04:22:19 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/05 06:22:02 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/27 06:03:39 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class Character : public ICharacter
 		Character& operator=(Character const &cpy);
 		~Character();
 		
-		std::string const &getName() const {return name;};
+		std::string const &getName() const;
 		void equip(AMateria* m);
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);

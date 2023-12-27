@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 01:07:51 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/05 01:17:11 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/27 04:31:56 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ class AAnimal
 		AAnimal(const AAnimal &other);
 		AAnimal &operator=(const AAnimal &other);
 		virtual ~AAnimal();
+
 		virtual void makeSound() const = 0;
-		std::string getType() const {return type;};
+		std::string getType() const;
+
 	protected :
 		std::string type;
 };

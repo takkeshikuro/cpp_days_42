@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 08:33:35 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/20 07:28:59 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/27 04:18:27 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ Cat::Cat() : Animal() {
     this->type = "Cat";
 	std::cout << "[New Cat constructor called] (inherit from Animal)." << std::endl;
 	std::cout << std::endl;
+
 	this->brain = new Brain();
 	if (!this->brain) {
 		std::cerr << "alloc error" << std::endl;
@@ -27,6 +28,7 @@ Cat::Cat() : Animal() {
 Cat::Cat(Cat const &cpy) : Animal(cpy), brain(NULL) {
 	std::cout << "[Cat copy constructor called]" << std::endl;
 	std::cout << std::endl;
+
 	this->brain = new Brain(*cpy.brain);
 	if (!this->brain) {
 		std::cerr << "alloc error" << std::endl;
@@ -37,8 +39,8 @@ Cat::Cat(Cat const &cpy) : Animal(cpy), brain(NULL) {
 Cat &Cat::operator=(Cat const &cpy) {
     std::cout << "[Cat copy assignment operator called]" << std::endl;
 	std::cout << std::endl;
+
 	if (this != &cpy) {
-		Animal::operator=(cpy);
 		delete brain;
 		this->brain = new Brain(*cpy.brain);
 		if (!this->brain) {

@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 08:16:27 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/24 06:43:37 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/27 03:25:16 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,11 @@ class Cat : public Animal
 		Cat(Cat const &cpy);
 		Cat& operator=(Cat const &cpy);
 		~Cat();
+
 		void makeSound() const;
 		void SetIdea(std::string idea, int i);
 		void DisplayIdea() const;
+
 	private :
 		Brain *brain;
 };

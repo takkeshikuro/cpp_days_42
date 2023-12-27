@@ -6,16 +6,16 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 05:44:41 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/20 07:50:03 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/27 06:08:07 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/Character.hpp"
 
 Character::Character() : ICharacter(), name("") {
-	
 //	std::cout << "[Default Character constructor called]" << std::endl;
 //	std::cout << std::endl;
+
 	int i = 0;
 	while (i < 4) {
 		inventory[i++] = NULL;
@@ -68,6 +68,9 @@ Character::~Character() {
 		delete inventory[i];
 }
 
+std::string const &Character::getName() const {
+	return name;
+}
 
 void Character::equip(AMateria* m) {
 	if (!m)

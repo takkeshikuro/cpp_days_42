@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 02:07:38 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/05 06:29:51 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/27 06:05:24 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,9 @@ class Ice : public AMateria
 		Ice(Ice const &cpy);
 		Ice& operator=(Ice const &cpy);
 		~Ice();
+
 	    AMateria* clone() const ;
     	void use(ICharacter &target);
-	private :
-	
 };
 
 #endif

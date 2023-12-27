@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 04:53:59 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/20 07:32:46 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/26 23:33:30 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,10 @@ WrongAnimal& WrongAnimal::operator=(WrongAnimal const &cpy) {
 
 WrongAnimal::~WrongAnimal() {
 	std::cout << "[WrongAnimal destructor called.]" << std::endl;
+}
+
+std::string WrongAnimal::getType() const {
+	return type;
 }
 
 void WrongAnimal::makeSound() const {

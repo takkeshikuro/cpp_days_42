@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 08:20:04 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/20 07:33:11 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/26 23:21:33 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,10 @@ Animal& Animal::operator=(Animal const &cpy) {
 
 Animal::~Animal() {
 	std::cout << "[Animal destructor called.]" << std::endl;
+}
+
+std::string Animal::getType() const {
+	return type;
 }
 
 void Animal::makeSound() const {

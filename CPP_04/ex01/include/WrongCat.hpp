@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 04:52:51 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/11/24 04:56:55 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/26 23:52:29 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class WrongCat : public WrongAnimal
 		WrongCat(WrongCat const &cpy);
 		WrongCat& operator=(WrongCat const &cpy);
 		~WrongCat();
+
 		void makeSound() const;
 };
 
