@@ -1,5 +1,4 @@
--oublie pas norme de nom des class dans le sujet regles communes
--voir comment valgrind
+
 -• Vous devez pouvoir utiliser vos fichiers d’en-tête séparément les uns des autres.
 C’est pourquoi ils devront inclure toutes les dépendances qui leur seront nécessaires. Cependant, vous devez éviter le problème de la double inclusion en les
 protégeant avec des include guards. Dans le cas contraire, votre note sera de 0.
