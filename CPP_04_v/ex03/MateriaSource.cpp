@@ -6,24 +6,41 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 05:06:05 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/20 07:52:17 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/28 03:01:04 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/MateriaSource.hpp"
 
 MateriaSource::MateriaSource() : IMateriaSource() {
-//	std::cout << "[MateriaSource default constructor called]" << std::endl;
-//	std::cout << std::endl;
 	for (int i = 0; i < 4; i++)
 		learnedMaterias[i] = NULL;
 }
 
-//copy et operator= ???
+MateriaSource::MateriaSource(MateriaSource const &cpy) : IMateriaSource(cpy) {
+	for (int i = 0; i < 4; i++) {
+		if (cpy.learnedMaterias[i])
+			learnedMaterias[i] = cpy.learnedMaterias[i];
+		else
+			learnedMaterias[i] = NULL;
+	}	
+}
+
+MateriaSource &MateriaSource::operator=(MateriaSource const &cpy) {
+	if (this != &cpy) 
+	{
+		for (int i = 0; i < 4; i++) 
+		{
+			if (cpy.learnedMaterias[i])
+				learnedMaterias[i] = cpy.learnedMaterias[i];
+			else
+				learnedMaterias[i] = NULL;
+		}		
+	}
+	return *this;
+}
 
 MateriaSource::~MateriaSource() {
-	//	std::cout << "[MateriaSource destructor called]" << std::endl;
-	//	std::cout << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 		if (learnedMaterias[i])

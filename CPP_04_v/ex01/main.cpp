@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 08:18:42 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/27 04:25:20 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/28 00:46:14 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,8 @@ void test3() {
 	// copy constructor test
 	Cat copy(cat);
 	std::cout << std::endl;
-	std::cout << "cat address: " << &cat << ", copy address:" << &copy << std::endl;
+	std::cout << "cat's brain address: " << cat.Get_brain() << std::endl;
+	std::cout << "copy's brain address: " << copy.Get_brain() << std::endl;
 	std::cout << "type of copy is : " << copy.getType() << std::endl;
 	std::cout << std::endl;
 	copy.DisplayIdea();
@@ -83,8 +84,8 @@ void test3() {
 	Cat assig;
 	assig = cat;
 	std::cout << std::endl;
-	std::cout << "cat address: " << &cat << ", assig address:" << &assig << std::endl;
-	std::cout << std::endl;
+	std::cout << "cat's brain address: " << cat.Get_brain() << std::endl;
+	std::cout << "assig's brain address: " << assig.Get_brain() << std::endl;	std::cout << std::endl;
 	assig.DisplayIdea();
 	std::cout << std::endl;
 }

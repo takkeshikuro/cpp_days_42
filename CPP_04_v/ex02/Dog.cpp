@@ -6,15 +6,15 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 08:37:13 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/27 04:20:30 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/28 01:06:47 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/Dog.hpp"
 
-Dog::Dog() : Animal() {
+Dog::Dog() : AAnimal() {
     this->type = "Dog";
-	std::cout << "[New Dog constructor called] (inherit from Animal)." << std::endl;
+	std::cout << "[New Dog constructor called] (inherit from AAnimal)." << std::endl;
 	std::cout << std::endl;
 
 	this->brain = new Brain();
@@ -24,7 +24,7 @@ Dog::Dog() : Animal() {
 	}
 }
 
-Dog::Dog(Dog const &cpy) : Animal(cpy), brain(NULL) {
+Dog::Dog(Dog const &cpy) : AAnimal(cpy), brain(NULL) {
 	std::cout << "[Dog copy constructor called]" << std::endl;
 	std::cout << std::endl;
 
@@ -53,6 +53,10 @@ Dog &Dog::operator=(Dog const &cpy) {
 Dog::~Dog() {
 	delete brain;
 	std::cout << "[Dog destructor called.]" << std::endl;
+}
+
+Brain *Dog::Get_brain() const {
+	return brain;
 }
 
 void Dog::makeSound() const {

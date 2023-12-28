@@ -8,6 +8,7 @@ NAME        = Brain
 PROJECT     = CPP04 - ex01
 CC          = c++
 CFLAGS      = -std=c++98 -Wall -Wextra -Werror
+
 INCLUDE     = -I./include
 SRC_FILES   = main.cpp Animal.cpp Cat.cpp Dog.cpp \
 			  WrongAnimal.cpp WrongCat.cpp Brain.cpp

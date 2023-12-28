@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 04:25:38 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/27 06:05:28 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/28 02:57:52 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ class MateriaSource : public IMateriaSource
 {
 	public:
 		MateriaSource();
+		MateriaSource(MateriaSource const &cpy);
+		MateriaSource& operator=(MateriaSource const &cpy);
 		~MateriaSource();
 
 		void learnMateria(AMateria* m);

@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 01:08:59 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/27 04:31:50 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/28 01:22:37 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ std::string AAnimal::getType() const {
 }
 
 
-void AAnimal::makeSound() const {
+/* void AAnimal::makeSound() const {
 	std::cout << "------------------------------" << std::endl;	
 	std::cout << "| normal sounddd (AAnimal)" << std::endl;
 	std::cout << "------------------------------" << std::endl;	
 	std::cout << std::endl;
-}
+}  */

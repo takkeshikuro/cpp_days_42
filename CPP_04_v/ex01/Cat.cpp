@@ -6,16 +6,16 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 08:33:35 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/27 04:29:09 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/28 00:32:20 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/Cat.hpp"
 #include "include/Brain.hpp"
 
-Cat::Cat() : AAnimal() {
+Cat::Cat() : Animal() {
     this->type = "Cat";
-	std::cout << "[New Cat constructor called] (inherit from AAnimal)." << std::endl;
+	std::cout << "[New Cat constructor called] (inherit from Animal)." << std::endl;
 	std::cout << std::endl;
 
 	this->brain = new Brain();
@@ -25,7 +25,7 @@ Cat::Cat() : AAnimal() {
 	}
 }
 
-Cat::Cat(Cat const &cpy) : AAnimal(cpy), brain(NULL) {
+Cat::Cat(Cat const &cpy) : Animal(cpy), brain(NULL) {
 	std::cout << "[Cat copy constructor called]" << std::endl;
 	std::cout << std::endl;
 
@@ -54,6 +54,10 @@ Cat &Cat::operator=(Cat const &cpy) {
 Cat::~Cat() {
 	delete brain;
 	std::cout << "[Cat destructor called.]" << std::endl;
+}
+
+Brain *Cat::Get_brain() const {
+	return (brain);
 }
 
 void Cat::makeSound() const {

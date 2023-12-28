@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 02:25:55 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/20 07:50:47 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/28 02:42:00 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,10 @@ Cure::~Cure() {
 
 AMateria *Cure::clone() const {
 	AMateria *clone;
-	try {
-		clone = new Cure();
-	}
-	catch (const std::bad_alloc &e) {
-		std::cerr << e.what() << std::endl;
-		std::exit(1);
+	clone = new Cure();
+	if (!clone) {
+		std::cerr << "alloc error" << std::endl;
+		exit(1);
 	}
 	return clone;
 }

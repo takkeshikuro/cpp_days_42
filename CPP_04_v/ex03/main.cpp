@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 01:20:51 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/20 07:55:28 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/28 02:56:59 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,20 +58,20 @@ void test2() {
 	for (int i = 0; i < 4 + 1; i++)
 		cures[i] = new Cure();
 
-	tmp[0] = src->createMateria("fire");
+	tmp[0] = src->createMateria("fire"); // try to create without learn
 	tmp[0] = src->createMateria("cure");
 	std::endl(std::cout);
 
 	for (int i = 0; i < 4 + 1; i++)
-		src->learnMateria(cures[i]);
+		src->learnMateria(cures[i]); // learn all cure
 	std::endl(std::cout);
 
 	for (int i = 0; i < 4 + 1; i++)
-		tmp[i] = src->createMateria("cure");
+		tmp[i] = src->createMateria("cure"); // create all cure
 	std::endl(std::cout);
 
 	for (int i = 0; i < 4 + 1; i++)
-		me->equip(tmp[i]);
+		me->equip(tmp[i]); 
 	std::endl(std::cout);
 
 	me->unequip(1);
@@ -79,7 +79,7 @@ void test2() {
 	std::endl(std::cout);
 
 	me->unequip(4 + 1);
-	me->use(4, *me);
+	me->use(3, *me);
 
 	delete src;
 	delete me;
@@ -91,7 +91,6 @@ void test2() {
 int main() {
 	test1();
 	test2();
-	// system("leaks ex03");
 	return 0;
 }
 

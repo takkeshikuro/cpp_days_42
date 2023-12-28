@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 08:37:52 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/27 04:30:01 by tmorikaw         ###   ########.fr       */
+/*   Created: 2023/11/23 08:13:17 by tmorikaw          #+#    #+#             */
+/*   Updated: 2023/12/28 00:36:33 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-#include "AAnimal.hpp"
-#include "Brain.hpp"
+#include <iostream>
+#include <cstdlib> // exit
+#include <new>
 
-class Brain;
-
-class Dog : public AAnimal
+class Animal
 {
-    public :
-        Dog();
-        Dog(Dog const &cpy);
-        Dog& operator=(Dog const &cpy);
-        ~Dog();
+	public :
+		Animal();
+		Animal(Animal const &cpy);
+		Animal& operator=(Animal const &cpy);
+		virtual ~Animal();
 
-        void makeSound() const;
-        void SetIdea(std::string idea, int i);
-        void DisplayIdea() const;
+		virtual void makeSound() const;
+		std::string getType() const;
 
-    private :
-        Brain *brain;
+	protected :
+		std::string type;
 };
 
 #endif

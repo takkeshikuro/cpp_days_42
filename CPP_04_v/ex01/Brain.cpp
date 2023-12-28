@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 05:59:37 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/20 07:34:13 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2023/12/28 00:31:00 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Brain::Brain(const Brain &cpy) {
 }
 
 Brain& Brain::operator=(Brain const &cpy) {
-	std::cout << "[Brain copy operator called]" << std::endl;
+	std::cout << "[Brain copy assignment operator called]" << std::endl;
 	std::cout << std::endl;
 	if (this != &cpy) {
 		for (int i = 0; i < 100; i++)

@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.hpp                                        :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 01:07:51 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/27 04:31:56 by tmorikaw         ###   ########.fr       */
+/*   Created: 2023/11/23 08:16:27 by tmorikaw          #+#    #+#             */
+/*   Updated: 2023/12/28 00:31:47 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AANIMAL_HPP
-#define AANIMAL_HPP
+#ifndef CAT_HPP
+#define CAT_HPP
 
-#include <string>
-#include <iostream>
-#include <cstdlib> //exit
+#include "Animal.hpp"
 
-class AAnimal 
+class Brain;
+
+class Cat : public Animal
 {
 	public :
-		AAnimal();
-		AAnimal(const AAnimal &other);
-		AAnimal &operator=(const AAnimal &other);
-		virtual ~AAnimal();
+		Cat();
+		Cat(Cat const &cpy);
+		Cat& operator=(Cat const &cpy);
+		~Cat();
 
-		virtual void makeSound() const = 0;
-		std::string getType() const;
+		void makeSound() const;
+		void SetIdea(std::string idea, int i);
+		void DisplayIdea() const;
+		Brain *Get_brain() const;
 
-	protected :
-		std::string type;
+	private :
+		Brain *brain;
 };
 
 #endif

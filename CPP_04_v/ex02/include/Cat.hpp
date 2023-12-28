@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 08:37:52 by tmorikaw          #+#    #+#             */
-/*   Updated: 2023/12/27 03:28:12 by tmorikaw         ###   ########.fr       */
+/*   Created: 2023/11/23 08:16:27 by tmorikaw          #+#    #+#             */
+/*   Updated: 2023/12/28 01:06:11 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef CAT_HPP
+#define CAT_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "AAnimal.hpp"
 
 class Brain;
 
-class Dog : public Animal
+class Cat : public AAnimal
 {
-    public :
-        Dog();
-        Dog(Dog const &cpy);
-        Dog& operator=(Dog const &cpy);
-        ~Dog();
+	public :
+		Cat();
+		Cat(Cat const &cpy);
+		Cat& operator=(Cat const &cpy);
+		~Cat();
 
-        void makeSound() const;
-        void SetIdea(std::string idea, int i);
-        void DisplayIdea() const;
-        
-    private :
-        Brain *brain;
+		void makeSound() const;
+		void SetIdea(std::string idea, int i);
+		void DisplayIdea() const;
+		Brain *Get_brain() const;
+
+	private :
+		Brain *brain;
 };
 
 #endif
