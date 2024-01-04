@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:22:08 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/04 03:40:55 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/01/04 04:14:08 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ class Bureaucrat
 		void	grade_increment();
 		void	grade_decrement();
         void    signForm(int ok, std::string name_form);
-
+		//void execute_form();
+	
 	private :
 		const std::string _name;
 		int _grade;

@@ -4,14 +4,14 @@ WHITE   = \033[1;37m
 BLINK   = \033[5m
 END     = \033[0m
 
-NAME        = Form
-PROJECT     = CPP05 - ex01
+NAME        = AForm
+PROJECT     = CPP05 - ex02
 CC          = c++
 CFLAGS      = -std=c++98 -Wall -Wextra -Werror
 
 INCLUDE     = -I./include
 SRC_FILES   = main.cpp Bureaucrat.cpp Form.cpp
-
+#add files i go hack
 HEADER_FILES = include/Bureaucrat.hpp include/Form.hpp
 
 OBJS_DIR    = .objets

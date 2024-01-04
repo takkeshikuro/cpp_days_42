@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:22:17 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/04 03:41:16 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/01/04 05:09:20 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 #include "Bureaucrat.hpp"
 #define TRUE 1
 #define FALSE 0
 
-class Form {
+class AForm {
 	public :
-		Form();
-		Form(std::string name, int grade_sign, int grade_exec);
-		Form(Form const &cpy);
-		Form &operator=(Form const &cpy);
-		~Form();
+		AForm();
+		AForm(std::string name, int grade_sign, int grade_exec);
+		AForm(AForm const &cpy);
+		AForm &operator=(AForm const &cpy);
+		virtual ~AForm();
 		
 		class GradeTooHighException : public std::exception {
 			public :
@@ -34,6 +34,8 @@ class Form {
 				virtual const char * what() const throw();	
 		};
 
+		virtual void make_action() = 0;
+		
 		const std::string	getName() const;
 		bool 				get_sign_bool() const ;
 		int					getGradeSign() const ;
@@ -48,6 +50,6 @@ class Form {
 		
 };
 
-std::ostream &operator<<(std::ostream &o, Form const &ok);
+std::ostream &operator<<(std::ostream &o, AForm const &ok);
 
 #endif
