@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:21:09 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/04 01:54:12 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/01/04 03:38:03 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,55 +19,63 @@ void    test1() {
     std::cout << std::endl;
 	std::cout << GREEN "[Test 1]" RESET << std::endl;
 	std::cout << std::endl;
-	
-	Bureaucrat tak("takeshi", 4);
-	//create new bureaucrat
-	
+	try {
+		Bureaucrat tak("takeshi", 1);
+		//create new bureaucrat
 
-    Form form_ok("new_file", 10, 1);
-	//create new form
+		Form form_ok("new_file", 10, 1);
+		//create new form
 
-	std::cout << form_ok << std::endl;
-    //display form's statut and data
-	
-	form_ok.beSigned(tak);
-	std::cout << std::endl;
-	//try to sign form by tak
-	
-    
-	std::cout << form_ok << std::endl;
-	std::cout << std::endl;
-    //display new statue and data
+		std::cout << form_ok << std::endl;
+		//display form's statut and data
+
+		form_ok.beSigned(tak);
+		std::cout << std::endl;
+		//try to sign form by tak
+
+		std::cout << form_ok << std::endl;
+		std::cout << std::endl;
+		//display new statue and data
+	}
+	catch (std::exception & e) {
+		std::cerr << "Error : " << e.what() << std::endl;
+	}
 }
+
 
 void test2() {
     std::cout << std::endl;
 	std::cout << GREEN "[Test 2]" RESET << std::endl;
 	std::cout << std::endl;
 	
-	Bureaucrat tak("takeshi", 4);
-	std::cout << "[INFO BUREAUCRAT] " << tak << std::endl;
-	//create new bureaucrat
-	
-	Form form_ko("impossible_file", 150, 1);
-	std::cout << form_ko << std::endl;
-	//create new form
-	
-	form_ko.beSigned(tak);
-	//try
-	
-	tak.grade_increment();
-	tak.grade_increment();
-	//get tak new level
-	
-	std::cout << "[INFO BUREAUCRAT] " << tak << std::endl;
-	
-	form_ko.beSigned(tak);
-	//try again
+	try {
+		Bureaucrat tak("takeshi", 4);
+		std::cout << "[INFO BUREAUCRAT] " << tak << std::endl;
+		//create new bureaucrat
+		
+		Form form_ko("impossible_file", 2, 1);
+		std::cout << form_ko << std::endl;
+		//create new form
+		
+		form_ko.beSigned(tak);
+		std::cout << std::endl;
+		//try
+		
+		tak.grade_increment();
+		tak.grade_increment();
+		std::cout << "[INFO BUREAUCRAT] " << tak << std::endl;
+		//get tak new level
+		
+		form_ko.beSigned(tak);
+		std::cout << std::endl;
+		//try again
 
-	std::cout << form_ko << std::endl;
-	std::cout << std::endl;
-
+		std::cout << form_ko << std::endl;
+		std::cout << std::endl;
+	}
+	catch (std::exception & e) {
+		std::cerr << "Error : " << e.what() << std::endl;
+	}
 }
 
 int main()

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/03 00:47:06 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/04 03:28:17 by tmorikaw         ###   ########.fr       */
+/*   Created: 2024/01/04 00:21:47 by tmorikaw          #+#    #+#             */
+/*   Updated: 2024/01/04 03:43:51 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@ Bureaucrat::Bureaucrat() : _name("default_name"), _grade(150) {
 Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name) {
 	std::cout << "[Bureaucrat normal constructor called]" << std::endl;
 	std::cout << std::endl;
+
 	if (grade > 150)
-		throw GradeTooLowException();
-	if (grade < 1)
-		throw GradeTooHighException();
+		throw Bureaucrat::GradeTooLowException();
+	else if (grade < 1)
+		throw Bureaucrat::GradeTooHighException();
 	this->_grade = grade;
 }
 
@@ -46,6 +47,7 @@ Bureaucrat::~Bureaucrat() {
 	std::cout << "[Bureaucrat destructor called.]" << std::endl;
 }
 
+/////////////////////////////////////////////////////////////////////////////////
 
 std::string Bureaucrat::getName() const { return _name; }
 
@@ -75,6 +77,19 @@ void	Bureaucrat::grade_decrement() {
 	std::cout << "-(" << getName() << " grade - 1)-" << std::endl;
 }
 
+
+void	Bureaucrat::signForm(int ok, std::string name_form) {
+	if (ok == 0)
+		std::cout << this->getName() << " signed " << name_form << "'s official form" << std::endl;
+	else if (ok == 1) {
+		std::cout << this->getName() << " couldn't sign " << name_form << "'s official form";
+		std::cout << " because the bureaucrat don't have the required grade to sign." << std::endl;
+	}
+	else if (ok == 2) {
+		std::cout << this->getName() << " couldn't sign " << name_form << "'s official form";
+		std::cout << " because the form is already signed." << std::endl;
+	}
+}
 
 std::ostream	&operator<<( std::ostream & o, Bureaucrat const &ok)
 {	
