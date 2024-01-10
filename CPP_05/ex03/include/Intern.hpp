@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/04 04:01:04 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/10 05:07:46 by tmorikaw         ###   ########.fr       */
+/*   Created: 2024/01/10 06:29:22 by tmorikaw          #+#    #+#             */
+/*   Updated: 2024/01/10 06:33:56 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SRHUBBERYCREATIONFORM_HPP
-#define SRHUBBERYCREATIONFORM_HPP
+#ifndef INTERN_HPP
+# define INTERN_HPP
 
 #include "AForm.hpp"
 
-class ShrubberyCreationForm : public AForm {
+class Intern {
 	public :
+		Intern();
+		Intern( Intern const &src );
+		Intern	&	operator=( Intern const &cpy);
+		~Intern();
 		
-		ShrubberyCreationForm(std::string target);
-		ShrubberyCreationForm(ShrubberyCreationForm const &cpy);
-		ShrubberyCreationForm & operator=(ShrubberyCreationForm const &cpy);
-		~ShrubberyCreationForm();
-		
-		void make_action() const;
-		
-	private : 
-		ShrubberyCreationForm();
-		std::string _target;
-};
-
-#endif
+		AForm *makeForm(std::string form_name, std::string target);
+}

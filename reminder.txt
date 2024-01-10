@@ -5,23 +5,16 @@ protégeant avec des include guards. Dans le cas contraire, votre note sera de 0
 ------> ca a voir 
 
 
-
--changer makefile (hpp no update)
-- remake cpp01 ex04 pour warning home
-main.cpp: In member function ‘void Sed::swap_occ(std::string&)’:
-main.cpp:20:16: error: type qualifiers ignored on cast result type [-Werror=ignored-qualifiers]
-   20 |         while ((const unsigned long)(index = line.find(_S1, index)) != std::string::npos)
-      |        
-
-
--modif les operateur +/-/*// ex02 fixed.cpp
-
--refaire teste diamontrap cpp3 ex3
-
-
-
 • You should be able to use each of your headers independently from others. Thus,
 they must include all the dependencies they need. However, you must avoid the
 problem of double inclusion by adding include guards. Otherwise, your grade will
 be 0.
 (a voir)
+
+
+
+
+voir  si ex01/ex02 cpp 05, dans le main on fait 
+
+form.beSigned() ou bureaucrat.signForm()
+pour signer un formulaire / +1 pour signForm comme dans ex02 mais a voir.
