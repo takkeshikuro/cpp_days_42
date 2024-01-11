@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 04:16:39 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/10 05:30:22 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/01/11 02:16:17 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,3 @@ void ShrubberyCreationForm::make_action() const
 	ofs << "    \\/ .|_//_/__/ ,|_//__\\_/. | _//__/_" << std::endl;
 	ofs.close();
 }
-		

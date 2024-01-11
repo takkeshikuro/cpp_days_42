@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 04:11:13 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/10 05:07:40 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/01/11 02:16:33 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class RobotomyRequestForm : public AForm {
 		~RobotomyRequestForm();
 		
 		void	make_action() const;
-		
+
 	private :
 		RobotomyRequestForm();
 		std::string _target;

@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:21:09 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/10 06:07:27 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/01/11 02:42:32 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,59 +15,27 @@
 #include "include/ShrubberyCreationForm.hpp"
 #include "include/RobotomyRequestForm.hpp"
 #include "include/PresidentialPardonForm.hpp"
+#include "include/Intern.hpp"
 
 # define GREEN "\033[32m"
 # define RESET "\033[0m"
 
-void    test1() {
-    std::cout << std::endl;
-	std::cout << GREEN "[Test 1] (sign and exec with good grade)" RESET << std::endl;
+
+void test1(const std::string &form_name, const std::string &target)
+{
 	std::cout << std::endl;
+	std::cout << GREEN "[Test] " << form_name << RESET << std::endl;
+	std::cout << std::endl;
+
 	
 	try {
-		Bureaucrat tak("takeshi", 4);
-		ShrubberyCreationForm s_form("s_target");
-		std::cout << tak << s_form << std::endl;
-		tak.signForm(s_form);
-		std::cout << std::endl << s_form << std::endl;
-		tak.executeForm(s_form);
-	}
-	catch (std::exception & e) {
-		std::cerr << "Error : " << e.what() << std::endl;
-	}
-}
-
-void    test2() {
-    std::cout << std::endl;
-	std::cout << GREEN "[Test 2] (try to exec whithout requiered grad)" RESET << std::endl;
-	std::cout << std::endl;
-
-	try {     
-		Bureaucrat tak("takeshi", 70); 
-		RobotomyRequestForm r_form("r_target");
+		Intern someRandomIntern;
+		AForm* rrf;
+		rrf = someRandomIntern.makeForm(form_name, target);
 		
-		std::cout << tak << r_form << std::endl;
-		tak.signForm(r_form);
-		std::cout << std::endl << r_form << std::endl;
-		tak.executeForm(r_form);
-	}
-	catch (std::exception & e) {
-		std::cerr << "Error : " << e.what() << std::endl;
-	}
-}
-
-void    test3() {
-    std::cout << std::endl;
-	std::cout << GREEN "[Test 3] (try to exec unsigned form)" RESET << std::endl;
-	std::cout << std::endl;
-
-	try {     
-		Bureaucrat tak("takeshi", 30); 
-		PresidentialPardonForm p_form("p_target");
-		std::cout << tak << p_form << std::endl;
-		tak.signForm(p_form);
-		std::cout << std::endl << p_form << std::endl;
-		tak.executeForm(p_form);
+		Bureaucrat boss("takeshi", 1);
+		boss.signForm(*rrf);
+		boss.executeForm(*rrf);
 	}
 	catch (std::exception & e) {
 		std::cerr << "Error : " << e.what() << std::endl;
@@ -76,7 +44,11 @@ void    test3() {
 
 int main()
 {
-	test1();
-    test2();
-	test3();
+	test1("shrubbery creation", "target_S");
+	std::cout << std::endl;
+	test1("robotomy request", "target_R");
+	std::cout << std::endl;
+	test1("presidential pardon", "target_P");
+	std::cout << std::endl;
+	test1("error test request", "target_error_test");
 }

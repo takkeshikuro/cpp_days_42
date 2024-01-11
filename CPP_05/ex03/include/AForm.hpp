@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:22:17 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/10 06:13:11 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/01/11 00:29:28 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ class AForm {
 	
 	private :
 		const std::string	_name;
-		bool    			_is_signed;
-		const int 			_grade_sign;
-		const int			_grade_exec;	
+		bool				_is_signed;
+		const int			_grade_sign;
+		const int			_grade_exec;
 };
 
 std::ostream &operator<<(std::ostream &o, AForm const &ok);

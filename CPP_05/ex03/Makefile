@@ -4,8 +4,8 @@ WHITE   = \033[1;37m
 BLINK   = \033[5m
 END     = \033[0m
 
-NAME        = AForm
-PROJECT     = CPP05 - ex02
+NAME        = Intern
+PROJECT     = CPP05 - ex03
 CC          = c++
 CFLAGS      = -std=c++98 -Wall -Wextra -Werror
 
@@ -13,11 +13,12 @@ INCLUDE     = -I./include
 SRC_FILES   = main.cpp Bureaucrat.cpp AForm.cpp \
 			ShrubberyCreationForm.cpp \
 			RobotomyRequestForm.cpp \
-			PresidentialPardonForm.cpp
+			PresidentialPardonForm.cpp Intern.cpp
 HEADER_FILES = include/Bureaucrat.hpp include/AForm.hpp \
 			include/ShrubberyCreationForm.hpp \
 			include/RobotomyRequestForm.hpp \
-			include/PresidentialPardonForm.hpp
+			include/PresidentialPardonForm.hpp \
+			include/Intern.hpp
 
 OBJS_DIR    = .objets
 OBJS        = $(SRC_FILES:%.cpp=$(OBJS_DIR)/%.o)
