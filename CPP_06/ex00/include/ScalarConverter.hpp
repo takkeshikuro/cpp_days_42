@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
+/*   By: keshikuro <keshikuro@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 05:15:32 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/16 06:52:03 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/01/17 17:23:39 by keshikuro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,31 @@
 #include <ctime>
 #include <limits>
 #include <cctype>
+#include <climits>
 #include "is_something.hpp"
+
+#define CHAR 1
+#define INT 2
+#define FLOAT 3
+#define DOUBLE 4
+#define SPECIAL 5
+#define INVALID 6
 
 class ScalarConverter {
 	public :
+	
 		static void convert(const std::string& s);
 
-		class invalid_input_exeption : public std::exception {
-			public :
-				virtual const char * what() const throw();
-		};
 	private:
 		ScalarConverter();
 		ScalarConverter(ScalarConverter const &cpy);
 		ScalarConverter& operator=(ScalarConverter const &cpy);
 		virtual ~ScalarConverter() = 0;
+		
+		class invalid_input_exeption : public std::exception {
+			public :
+				virtual const char * what() const throw();
+		};
 };
 
 #endif

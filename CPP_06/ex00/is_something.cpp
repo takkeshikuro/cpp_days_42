@@ -6,7 +6,7 @@
 /*   By: keshikuro <keshikuro@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 06:40:20 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/17 15:05:50 by keshikuro        ###   ########.fr       */
+/*   Updated: 2024/01/17 17:09:50 by keshikuro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int is_float(const std::string& value)
 		if (!std::isdigit(c))
 			return 0;
 	}
-	return 0; // value sans F a la fin
+	return 0;
 }
 
 int is_double(const std::string& value) 
@@ -57,7 +57,7 @@ int is_double(const std::string& value)
 	return 1;
 }
 
-int is_special(const std::string &value)//idk
+int is_special(const std::string &value)
 {
 	return ( value == "nan" || value == "nanf"
 			|| value == "-inff" || value =="+inff"
