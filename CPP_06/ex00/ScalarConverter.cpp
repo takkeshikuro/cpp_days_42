@@ -6,7 +6,7 @@
 /*   By: keshikuro <keshikuro@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 05:28:41 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/17 16:05:04 by keshikuro        ###   ########.fr       */
+/*   Updated: 2024/01/17 16:07:53 by keshikuro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,8 @@ void print_int_convert(const std::string &value)
 		std::cout << "'" << c << "'\n";
 	else
 		std::cout << "Non displayable\n";
-//	if (this->_overflow == false)
+//	if (check overflow)
 	std::cout << "int : " << i << "\n";
-//	else
-//		std::cout << "int : impossible\n";
 	std::cout << "float : " << std::fixed << std::setprecision(1) << f << "f\n";
 	std::cout << "double : " << std::fixed << std::setprecision(1) << d << "\n";
 }
@@ -46,10 +44,8 @@ void	print_float_convert(const std::string &value)
 		std::cout << "'" << c << "'\n";
 	else
 		std::cout << "Non displayable\n";
-//	if (this->_overflow == false)
+//	if (check overflow)
 	std::cout << "int : " << i << "\n";
-//	else
-//		std::cout << "int : impossible\n";
 	std::cout << "float : " << std::fixed << std::setprecision(1) << f << "f\n";
 	std::cout << "double : " << std::fixed << std::setprecision(1) << d << "\n";
 }
@@ -66,10 +62,8 @@ void	print_double_convert(const std::string &value)
 		std::cout << "'" << c << "'\n";
 	else
 		std::cout << "Non displayable\n";
-//	if (this->_overflow == false)
+//	if (check overflow)
 	std::cout << "int : " << i << "\n";
-//	else
-//		std::cout << "int : impossible\n";
 	std::cout << "float : " << std::fixed << std::setprecision(1) << f << "f\n";
 	std::cout << "double : " << std::fixed << std::setprecision(1) << d << "\n";
 }
@@ -80,7 +74,7 @@ void print_char(char c)
 }
 
 void print_special(const std::string &value)
-{{
+{
 	if (value == "nanf" || value == "nan")
 	{
 		std::cout << "char : impossible\n";
@@ -109,7 +103,6 @@ void print_special(const std::string &value)
 		std::cout << "float : -inff\n";
 		std::cout << "double : -inf\n";
 	}
-}
 }
 
 void ScalarConverter::convert(const std::string &value)
