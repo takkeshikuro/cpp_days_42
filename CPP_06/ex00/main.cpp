@@ -3,20 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
+/*   By: keshikuro <keshikuro@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 05:31:22 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/16 05:31:41 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/01/17 16:04:32 by keshikuro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/ScalarConverter.hpp"
 
-int main(void) 
+int main(int ac, char **av) 
 {
-    ScalarConverter::convert("'a'");    // Test avec un littéral char
-    ScalarConverter::convert("42");      // Test avec un littéral int
-    ScalarConverter::convert("4.2f");    // Test avec un littéral float
-    ScalarConverter::convert("4.2");     // Test avec un littéral double
-    return 0;
+	if (ac == 1)
+	{
+		try {
+			ScalarConverter::convert(av[1]);
+		}
+		catch (std::exception & e) {
+			std::cerr << "Error : " << e.what() << std::endl;
+		}
+	}
+	else
+		std::cout << "Error, need only one arg." << std::endl;
 }

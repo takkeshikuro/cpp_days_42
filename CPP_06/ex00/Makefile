@@ -7,8 +7,8 @@ END     = \033[0m
 NAME        = ScalarConvert
 PROJECT     = CPP06 - ex00
 CC          = c++
-CFLAGS      = -std=c++98 -Wall -Wextra -Werror
-
+CFLAGS      = -std=c++98
+# -Wall -Wextra -Werror
 INCLUDE     = -I./include
 SRC_FILES   = main.cpp ScalarConverter.cpp 
 
