@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keshikuro <keshikuro@student.42.fr>        +#+  +:+       +#+        */
+/*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 05:15:32 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/17 17:23:39 by keshikuro        ###   ########.fr       */
+/*   Updated: 2024/01/18 01:13:41 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,13 @@
 
 class ScalarConverter {
 	public :
-	
 		static void convert(const std::string& s);
 
 	private:
 		ScalarConverter();
 		ScalarConverter(ScalarConverter const &cpy);
 		ScalarConverter& operator=(ScalarConverter const &cpy);
-		virtual ~ScalarConverter() = 0;
-		
+		~ScalarConverter();
 		class invalid_input_exeption : public std::exception {
 			public :
 				virtual const char * what() const throw();

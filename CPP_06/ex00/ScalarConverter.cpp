@@ -3,16 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keshikuro <keshikuro@student.42.fr>        +#+  +:+       +#+        */
+/*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 05:28:41 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/17 17:30:44 by keshikuro        ###   ########.fr       */
+/*   Updated: 2024/01/18 02:25:07 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/ScalarConverter.hpp"
 #include "is_something.cpp"
 
+ScalarConverter::ScalarConverter() {}
+
+ScalarConverter::ScalarConverter(ScalarConverter const &cpy) {
+	*this = cpy;
+}
+
+ScalarConverter& ScalarConverter::operator=(ScalarConverter const &cpy) {
+	(void)cpy;
+	return *this;
+}
+
+ScalarConverter::~ScalarConverter() {}
 
 void print_int_convert(const std::string &value)
 {
@@ -41,12 +53,11 @@ void	print_float_convert(const std::string &value)
 	int i = static_cast<int>(f);
 	double d = static_cast<double>(f);
 
-	std::cout << "char : ";
 	if (std::isprint(c))
-		std::cout << "'" << c << "'" << std::endl;
+		std::cout << "char : '" << c << "'" << std::endl;
 	else
-		std::cout << "Non displayable" << std::endl;
-	if (i >= INT_MIN && i <= INT_MAX)
+		std::cout << "char : Non displayable" << std::endl;;
+	if (d >= INT_MIN && d <= INT_MAX)
 		std::cout << "int : " << i << std::endl;
 	else
 		std::cout << "int : impossible" << std::endl;
@@ -61,17 +72,14 @@ void	print_double_convert(const std::string &value)
 	int i = static_cast<int>(d);
 	float f = static_cast<float>(d);
 
-	std::cout << "char : ";
 	if (std::isprint(c))
-		std::cout << "'" << c << "'" << std::endl;
+		std::cout << "char : '" << c << "'" << std::endl;
 	else
-		std::cout << "Non displayable" << std::endl;;
-	
-	if (i >= INT_MIN && i <= INT_MAX)
-		std::cout << "int : " << i << std::endl; // pb overfloww
+		std::cout << "char : Non displayable" << std::endl;;
+	if (d >= INT_MIN && d <= INT_MAX)
+		std::cout << "int : " << i << std::endl;
 	else
 		std::cout << "int : impossible" << std::endl;
-		
 	std::cout << "float : " << std::fixed << std::setprecision(1) << f << "f" << std::endl;;
 	std::cout << "double : " << std::fixed << std::setprecision(1) << d << std::endl;
 }
@@ -82,7 +90,7 @@ void print_char_convert(char c)
 	float f = static_cast<float>(c);
 	double d = static_cast<double>(c);
 	
-	std::cout << "char : " << c << std::endl;
+	std::cout << "char : '" << c << "'" << std::endl;
 	std::cout << "int : " << i << std::endl;
 	std::cout << "float : " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
 	std::cout << "double : " << std::fixed << std::setprecision(1) << d << std::endl;
@@ -133,13 +141,13 @@ short	get_type(const std::string &value)
 		return SPECIAL;
 	else
 	{
-		if (is_float(value))
+		if (is_int(value))
+			return INT;
+		else if (is_float(value))
 		 	return FLOAT;
 		else if (is_double(value))
 			return DOUBLE;
-		else if (is_int(value))
-			return INT;
-		else
+		else 
 			return INVALID;
 	}
 }
