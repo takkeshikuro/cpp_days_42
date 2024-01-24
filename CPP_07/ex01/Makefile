@@ -4,13 +4,13 @@ WHITE   = \033[1;37m
 BLINK   = \033[5m
 END     = \033[0m
 
-NAME        = Base
+NAME        = Iter
 PROJECT     = CPP07 - ex01
 CC          = c++
 CFLAGS      = -std=c++98 -Wall -Wextra -Werror
 # 
 INCLUDE     = -I./include
-SRC_FILES   = main.cpp iter.cpp
+SRC_FILES   = main.cpp 
 
 HEADER_FILES = include/iter.hpp
 

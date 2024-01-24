@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
+/*   By: keshikuro <keshikuro@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 06:50:20 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/24 06:51:34 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:14:02 by keshikuro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,19 @@
 
 #include <iostream>
 
-template<typename T>
-void    iter(T &a, T &b, T &c) {
-    
+template <typename T>
+void    function_test(T const &tab_content, int i)
+{
+    std::cout << "tab[" << i << "] = " << tab_content << std::endl;
+    return ;
+}
+
+template <typename T>
+void    iter(T *arr, int tab_size, void (*f)(T const &, int)) 
+{
+    for (int i = 0; i < tab_size; i++)
+        f(arr[i], i);
+    return;
 }
 
 
