@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 04:33:51 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/18 05:02:29 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/01/24 02:37:04 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,15 @@ Base * generate(void)
 	switch (choice)
 	{
 		case 0 :
+//			std::cout << "spawn:A\n";
 			instance = new A();
 			break;
 		case 1 :
+//			std::cout << "spawn:B\n";
 			instance = new B();
 			break;
 		case 2 :
+//			std::cout << "spawn:C\n";
 			instance = new C();
 			break; 
 	}
