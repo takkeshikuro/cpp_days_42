@@ -4,14 +4,14 @@ WHITE   = \033[1;37m
 BLINK   = \033[5m
 END     = \033[0m
 
-NAME        = easyfind
-PROJECT     = CPP08 - ex00
+NAME        = Span
+PROJECT     = CPP08 - ex01
 CC          = c++
 CFLAGS      = -std=c++98 -Wall -Wextra -Werror
 #
 INCLUDE     = -I./include
-SRC_FILES   = main.cpp
-HEADER_FILES = include/easyfind.hpp
+SRC_FILES   = main.cpp Span.cpp
+HEADER_FILES = include/Span.hpp
 
 OBJS_DIR    = .objets
 OBJS        = $(SRC_FILES:%.cpp=$(OBJS_DIR)/%.o)

@@ -7,8 +7,8 @@ END     = \033[0m
 NAME        = Array
 PROJECT     = CPP07 - ex02
 CC          = c++
-CFLAGS      =  -Wall -Wextra -Werror
-#-std=c++98
+CFLAGS      = -std=c++98 -Wall -Wextra -Werror
+#
 INCLUDE     = -I./include
 SRC_FILES   = main.cpp
 HEADER_FILES = include/Array.hpp
