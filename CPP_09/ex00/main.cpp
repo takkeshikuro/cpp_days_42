@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
+/*   By: keshikuro <keshikuro@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 06:48:48 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/26 09:20:01 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/01/30 10:02:41 by keshikuro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/BitcoinExchange.hpp"
-
 
 void	starting_point(std::ifstream &ifs_input)
 {
@@ -43,7 +42,6 @@ void	starting_point(std::ifstream &ifs_input)
 	}
 
 }
-
 
 int main(int ac, char **av)
 {

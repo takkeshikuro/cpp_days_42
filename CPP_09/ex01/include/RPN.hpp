@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keshikuro <keshikuro@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/26 07:02:14 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/30 10:00:21 by keshikuro        ###   ########.fr       */
+/*   Created: 2024/01/30 10:10:34 by keshikuro         #+#    #+#             */
+/*   Updated: 2024/01/30 10:11:20 by keshikuro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BITCOINEXCHANGE_HPP
-#define BITCOINEXCHANGE_HPP
+#ifndef RPN_HPP
+#define RPN_HPP
 
 #include <iostream>
 #include <algorithm>
@@ -24,28 +24,7 @@
 #include <sstream>
 #include <ios>
 
-class Data {
-	public :
-		Data();
-		Data(Data const &cpy);
-		Data &operator=(Data const &cpy);
-		~Data();
 
-		class BadInput : public std::exception {
-			virtual const char *what() const throw();
-		};
 
-		class GetDataLineError : public std::exception {
-			virtual const char *what() const throw();
-		};
-		
-		void    read_data_file(std::ifstream &ifs);
-		float	get_price(std::string date) const;
-		void	print_line(std::string date, float exchange_rate);
-		
-	private :
-		
-		std::map<std::string, float> data_history;
-};
 
 #endif
