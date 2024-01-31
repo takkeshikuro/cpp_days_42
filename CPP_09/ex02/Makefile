@@ -7,10 +7,10 @@ END     = \033[0m
 NAME        = PmergeMe
 PROJECT     = CPP09 - ex02
 CC          = c++
-CFLAGS      = -std=c++98 -Wall -Wextra -Werror
-#
+CFLAGS      =  -Wall -Wextra -Werror
+#-std=c++98
 INCLUDE     = -I./include
-SRC_FILES   = main.cpp PmergeMe.cpp
+SRC_FILES   = main.cpp 
 HEADER_FILES = include/PmergeMe.hpp
 
 OBJS_DIR    = .objets
