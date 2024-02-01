@@ -25,9 +25,7 @@ class Bureaucrat
 		Bureaucrat(Bureaucrat const &cpy);
 		Bureaucrat& operator=(Bureaucrat const &cpy);
 		~Bureaucrat();
-		std::string	getName() const;
-		int					getGrade() const;
-		
+
 		class GradeTooHighException : public std::exception {
 			public :
 				virtual const char * what() const throw();
@@ -38,8 +36,10 @@ class Bureaucrat
 				virtual const char * what() const throw();	
 		};
 
-		void	grade_increment();
-		void	grade_decrement();
+		std::string	getName() const;
+		int			getGrade() const;
+		void		grade_increment();
+		void		grade_decrement();
 
 	private :
 		const std::string _name;

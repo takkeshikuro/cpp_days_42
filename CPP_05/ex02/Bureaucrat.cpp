@@ -74,6 +74,24 @@ void	Bureaucrat::grade_decrement()
 }
 
 
+/*
+void	Bureaucrat::signForm(AForm &Aform)
+{
+	if (this->_grade > form.getGradeSign())
+	{
+		// couldnt bc of grade
+	}
+	else if (form.get_sign_bool())
+	{
+		// couldnt bc already signed
+	}
+	else
+	{
+		//sign form
+		// form.besigned(*this);
+	}
+}*/
+
 void	Bureaucrat::signForm(AForm &form) 
 {
 	int ok = form.beSigned(*this);

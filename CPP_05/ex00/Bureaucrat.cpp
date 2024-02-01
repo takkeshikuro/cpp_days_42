@@ -46,12 +46,6 @@ Bureaucrat::~Bureaucrat() {
 	std::cout << "[Bureaucrat destructor called.]" << std::endl;
 }
 
-
-std::string Bureaucrat::getName() const { return _name; }
-
-int Bureaucrat::getGrade() const { return _grade; }
-
-
 const char *Bureaucrat::GradeTooHighException::what() const throw() {
 		return "grade out of the range : too high.";
 }
@@ -60,6 +54,13 @@ const char *Bureaucrat::GradeTooLowException::what() const throw() {
 		return "grade out of the range : too low.";
 }
 
+std::string Bureaucrat::getName() const {
+	return _name; 
+}
+
+int Bureaucrat::getGrade() const {
+	return _grade;
+}
 
 void	Bureaucrat::grade_increment() {
 	if ((_grade - 1) < 1)

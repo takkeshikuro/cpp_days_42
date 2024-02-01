@@ -74,6 +74,23 @@ void	Bureaucrat::grade_decrement() {
 	std::cout << "-(" << getName() << " grade - 1)-" << std::endl;
 }
 
+/*
+void	Bureaucrat::signForm(Form &form)
+{
+	if (this->_grade > form.getGradeSign())
+	{
+		// couldnt bc of grade
+	}
+	else if (form.get_sign_bool())
+	{
+		// couldnt bc already signed
+	}
+	else
+	{
+		//sign form
+		// form.besigned(*this);
+	}
+}*/
 
 void	Bureaucrat::signForm(int ok, std::string name_form) {
 	if (ok == 0)

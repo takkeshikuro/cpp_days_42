@@ -57,6 +57,14 @@ int AForm::getGradeSign() const { return _grade_sign; }
 int AForm::getGradeExec() const { return _grade_exec; }
 
 
+/*
+void	AForm::beSigned(const Bureaucrat &bureaucrat) {
+	if (bureaucrat.getGrade() > _grade_sign)
+		throw GradeTooLowException();
+	else
+		_is_signed = TRUE;
+}*/
+
 int   AForm::beSigned(Bureaucrat &boy) 
 {
 	if (_is_signed == TRUE)						// can't sign bc form statue
