@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:22:17 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/10 06:13:11 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/02 02:39:57 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,26 @@ class AForm {
 			public :
 				virtual const char * what() const throw();	
 		};
-			
+		class FormAlreadySignExeption : public std::exception {
+			public :
+				virtual const char * what() const throw();
+		};
+		class FormNotSignedExeption : public std::exception {
+			public :
+				virtual const char * what() const throw();
+		};
+	
+		class GradetooLowToExec : public std::exception {
+			public :
+				virtual const char * what() const throw();
+		};
+		
 		const std::string	getName() const;
 		bool 				get_sign_bool() const ;
 		int					getGradeSign() const ;
 		int					getGradeExec() const ;
-		int					beSigned(Bureaucrat &boy);
-		int					execute(Bureaucrat const &executor) const;	
+		void				beSigned(const Bureaucrat &bureaucrat);
+		void				execute(Bureaucrat const &executor) const;	
 	
 	protected :
 		virtual void make_action() const = 0;

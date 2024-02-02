@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 04:30:25 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/10 06:05:05 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/02 02:57:24 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,8 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &cpy)
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm const &cpy) 
 {
-	if (this != &cpy) {
+	if (this != &cpy)
 		this->_target = cpy._target;
-	}
 	return *this;
 }
 

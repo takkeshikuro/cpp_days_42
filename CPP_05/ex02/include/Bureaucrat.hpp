@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:22:08 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/10 06:08:54 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/02 02:39:47 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,25 +40,13 @@ class Bureaucrat
 			public :
 				virtual const char * what() const throw();	
 		};
-		class FormAlreadySignExeption : public std::exception {
-			public :
-				virtual const char * what() const throw();
-		};
-		class FormNotSignedExeption : public std::exception {
-			public :
-				virtual const char * what() const throw();
-		};
-		class GradetooLowToExec : public std::exception {
-			public :
-				virtual const char * what() const throw();
-		};
 		
 		std::string	getName() const;
 		int			getGrade() const;
 		void		grade_increment();
 		void		grade_decrement();
-        void    	signForm(AForm & form);
-		void		executeForm(AForm const & form);
+        void    	signForm(AForm &form);
+		void		executeForm(AForm const &form);
 		
 	private :
 		const std::string _name;

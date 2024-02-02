@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 04:33:57 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/10 06:14:01 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/02 02:57:39 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,8 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &cpy
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm const &cpy) 
 {
-	if (this != &cpy) {
+	if (this != &cpy)
 		this->_target = cpy._target;
-	}
 	return *this;
 }
 

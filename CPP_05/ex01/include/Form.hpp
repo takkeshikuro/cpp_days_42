@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:22:17 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/04 03:33:14 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/02 01:56:31 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include "Bureaucrat.hpp"
 #define TRUE 1
 #define FALSE 0
+
+class Bureaucrat;
 
 class Form {
 	public :
@@ -38,14 +40,13 @@ class Form {
 		bool 				get_sign_bool() const ;
 		int					getGradeSign() const ;
 		int					getGradeExec() const ;
-		void				beSigned(Bureaucrat &boy);
+		void				beSigned(const Bureaucrat &bureaucrat);
 
 	private :
 		const std::string _name;
 		bool    _is_signed;
 		const int _grade_sign;
 		const int _grade_exec;
-		
 };
 
 std::ostream &operator<<(std::ostream &o, Form const &ok);

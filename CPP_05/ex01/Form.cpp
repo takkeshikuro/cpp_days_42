@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:33:38 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/04 03:34:35 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/02 02:10:18 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ Form::Form(std::string name, int grade_sign, int grade_exec) :_name(name),
 _is_signed(FALSE), _grade_sign(grade_sign), _grade_exec(grade_exec) {
 	std::cout << "[Form normal constructor called]" << std::endl;
 	std::cout << std::endl;
+
 	if (grade_sign > 150 || grade_exec > 150)
 		throw GradeTooLowException();
 	else if (grade_sign < 1 || grade_exec < 1)
@@ -40,6 +41,7 @@ _is_signed(FALSE), _grade_sign(cpy._grade_sign), _grade_exec(cpy._grade_exec) {
 Form &Form::operator=(Form const &cpy) {
 	std::cout << "[Form copy assignment operator called]" << std::endl;
 	std::cout << std::endl;
+	
 	if (this != &cpy)
 		this->_is_signed = cpy._is_signed; // a voir
 	return *this;
@@ -65,29 +67,14 @@ int Form::getGradeSign() const { return _grade_sign; }
 
 int Form::getGradeExec() const { return _grade_exec; }
 
-/*
-void	Form::beSigned(const Bureaucrat &bureaucrat) {
+
+void	Form::beSigned(const Bureaucrat &bureaucrat) 
+{
 	if (bureaucrat.getGrade() > _grade_sign)
 		throw GradeTooLowException();
 	else
 		_is_signed = TRUE;
-}*/
-
-void   Form::beSigned(Bureaucrat &boy) {
-	if (_is_signed == FALSE) {
-		if (boy.getGrade() <= _grade_sign) {
-			_is_signed = TRUE;
-			boy.signForm(0, this->getName());
-			return ;
-		}
-		else {
-			boy.signForm(1, this->getName());
-			return ;
-		}
-	}
-	boy.signForm(2, this->getName());
 }
-
 
 std::ostream	&operator<<( std::ostream & o, Form const &ok)
 {	

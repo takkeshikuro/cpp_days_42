@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:21:09 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/10 06:07:27 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/02 02:54:54 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ void    test1() {
 	try {
 		Bureaucrat tak("takeshi", 4);
 		ShrubberyCreationForm s_form("s_target");
-		std::cout << tak << s_form << std::endl;
+		
+		std::cout << tak << std::endl;
+		std::cout << s_form << std::endl;
+		
 		tak.signForm(s_form);
 		std::cout << std::endl << s_form << std::endl;
 		tak.executeForm(s_form);
@@ -43,10 +46,12 @@ void    test2() {
 	std::cout << std::endl;
 
 	try {     
-		Bureaucrat tak("takeshi", 70); 
+		Bureaucrat tak("takeshi", 1); 
 		RobotomyRequestForm r_form("r_target");
 		
-		std::cout << tak << r_form << std::endl;
+		std::cout << tak << std::endl;
+		std::cout << r_form << std::endl;
+		
 		tak.signForm(r_form);
 		std::cout << std::endl << r_form << std::endl;
 		tak.executeForm(r_form);
@@ -62,9 +67,12 @@ void    test3() {
 	std::cout << std::endl;
 
 	try {     
-		Bureaucrat tak("takeshi", 30); 
+		Bureaucrat tak("takeshi", 1); 
 		PresidentialPardonForm p_form("p_target");
-		std::cout << tak << p_form << std::endl;
+		
+		std::cout << tak << std::endl;
+		std::cout << p_form << std::endl;
+		
 		tak.signForm(p_form);
 		std::cout << std::endl << p_form << std::endl;
 		tak.executeForm(p_form);

@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:21:09 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/04 03:38:03 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/02 02:08:02 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void    test1() {
     std::cout << std::endl;
 	std::cout << GREEN "[Test 1]" RESET << std::endl;
 	std::cout << std::endl;
-	try {
+	try 
+	{
 		Bureaucrat tak("takeshi", 1);
 		//create new bureaucrat
 
@@ -28,8 +29,8 @@ void    test1() {
 
 		std::cout << form_ok << std::endl;
 		//display form's statut and data
-
-		form_ok.beSigned(tak);
+		
+		tak.signForm(form_ok);
 		std::cout << std::endl;
 		//try to sign form by tak
 
@@ -57,16 +58,19 @@ void test2() {
 		std::cout << form_ko << std::endl;
 		//create new form
 		
-		form_ko.beSigned(tak);
+		tak.signForm(form_ko);
 		std::cout << std::endl;
+		
 		//try
+		std::cout << form_ko << std::endl;
+		std::cout << std::endl;
 		
 		tak.grade_increment();
 		tak.grade_increment();
 		std::cout << "[INFO BUREAUCRAT] " << tak << std::endl;
 		//get tak new level
 		
-		form_ko.beSigned(tak);
+		tak.signForm(form_ko);
 		std::cout << std::endl;
 		//try again
 

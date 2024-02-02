@@ -6,13 +6,14 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:21:47 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/10 06:11:38 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/02 02:53:54 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : _name("default_name"), _grade(150) {}
+Bureaucrat::Bureaucrat() : _name("default_name"), _grade(150) 
+{}
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name) 
 {
@@ -23,19 +24,22 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 	this->_grade = grade;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &cpy) : _name(cpy._name), _grade(cpy._grade) {}
+Bureaucrat::Bureaucrat(Bureaucrat const &cpy)
+{
+	*this = cpy;
+}
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &cpy) 
-{ // voir le _name
-	if (this != &cpy) {
+{
+	if (this != &cpy)
 		_grade = cpy.getGrade();
-	}
 	return *this;
 }
 
-Bureaucrat::~Bureaucrat() {}
+Bureaucrat::~Bureaucrat() 
+{}
 
-//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////getter&exception/////////////////////////////////////////////////////////////
 
 const char *Bureaucrat::GradeTooHighException::what() const throw() {
 		return "grade out of the range : too high.";
@@ -45,17 +49,15 @@ const char *Bureaucrat::GradeTooLowException::what() const throw() {
 		return "grade out of the range : too low.";
 }
 
-const char *Bureaucrat::FormAlreadySignExeption::what() const throw() {
-		return "Form is already signed. (exeption)";
+std::string Bureaucrat::getName() const {
+	return _name;
 }
 
-const char *Bureaucrat::FormNotSignedExeption::what() const throw() {
-		return "Form is not signed yet. (exeption)";
+int Bureaucrat::getGrade() const { 
+	return _grade; 
 }
 
-std::string Bureaucrat::getName() const { return _name; }
-
-int Bureaucrat::getGrade() const { return _grade; }
+//////////////grade_increment/decrement////////////////////////////////////////////////////////
 
 void	Bureaucrat::grade_increment() 
 {
@@ -73,72 +75,47 @@ void	Bureaucrat::grade_decrement()
 	std::cout << "-(" << getName() << " grade - 1)-" << std::endl;
 }
 
+//////////////sign&execute/////////////////////////////////////////////////////////////
 
-/*
-void	Bureaucrat::signForm(AForm &Aform)
+void	Bureaucrat::signForm(AForm &form)
 {
-	if (this->_grade > form.getGradeSign())
+	if (_grade > form.getGradeSign())
 	{
-		// couldnt bc of grade
+		std::cout << _name << " couldn't sign " << form.getName();
+		std::cout << " because the bureaucrat don't have the required grade to sign." << std::endl;
 	}
-	else if (form.get_sign_bool())
+	else if (form.get_sign_bool() == TRUE)
 	{
-		// couldnt bc already signed
+		std::cout << _name << " couldn't sign " << form.getName();
+		std::cout << " because the form is already signed." << std::endl;
 	}
 	else
 	{
-		//sign form
-		// form.besigned(*this);
+		std::cout << _name << " signed " << form.getName() << std::endl;
+		form.beSigned(*this);
 	}
-}*/
+}
 
-void	Bureaucrat::signForm(AForm &form) 
+void	Bureaucrat::executeForm(AForm const &AForm)
 {
-	int ok = form.beSigned(*this);
-	
-	if (ok == 1) // can't sign bc statue 
+	if (AForm.get_sign_bool() == FALSE)
 	{
-		std::cout << this->getName() << " couldn't sign " << form.getName() << "'s official form";
-		std::cout << " because the form is already signed." << std::endl;
-		throw FormAlreadySignExeption();
-	}
-	else if (ok == 2)  // can't sign bc grade
-	{
-		std::cout << this->getName() << " couldn't sign " << form.getName() << "'s official form";
-		std::cout << " because the bureaucrat don't have the required grade to sign." << std::endl;
-		throw GradeTooLowException();
-	}
-	if (ok == 3)	// can sign
-	{
-		std::cout << "+ " << this->getName() << " signed ";
-		std::cout << form.getName() << "'s official form +" << std::endl;
-
-	} 
-}
-
-void	Bureaucrat::executeForm(AForm const & form) 
-{	
-	int ok = form.execute(*this);
-
-	if (ok == 1)
-	{
-		std::cout << this->getName() << " couldn't execute " << form.getName();
+		std::cout << _name << " couldn't execute " << AForm.getName();
 		std::cout << " because the form is not signed." << std::endl;
-		throw FormNotSignedExeption();
 	}
-	else if (ok == 2)
+	else if (_grade > AForm.getGradeExec()) 
 	{
-		std::cout << this->getName() << " couldn't execute " << form.getName();
-		std::cout << " because the bureaucrat don't have the requiered grade to execute." << std::endl;
-		throw GradeTooLowException();
-	}
-	else if (ok == 3) 
+		std::cout << _name << " couldn't execute " << AForm.getName();
+		std::cout << " because the bureaucrat don't have the required grade to sign.\n";
+	}	
+
+	else
 	{
-		std::cout << "+ " << this->getName() << " executed ";
-		std::cout << form.getName() << " +" << std::endl;
+		std::cout << "+ " << _name << " executed ";
+		std::cout << AForm.getName() << " +" << std::endl;
+		AForm.execute(*this);
 	}
 }
-
 
 std::ostream	&operator<<( std::ostream & o, Bureaucrat const &ok)
 {	

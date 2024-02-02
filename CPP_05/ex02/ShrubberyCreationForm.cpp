@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 04:16:39 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/10 05:30:22 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/02 02:57:43 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,8 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &cpy)
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm const &cpy) 
 {
-	if (this != &cpy) {
+	if (this != &cpy)
 		this->_target = cpy._target;
-	}
 	return *this;
 }
 

@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:21:47 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/04 03:30:26 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/02 01:50:54 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,34 +74,23 @@ void	Bureaucrat::grade_decrement() {
 	std::cout << "-(" << getName() << " grade - 1)-" << std::endl;
 }
 
-/*
+
 void	Bureaucrat::signForm(Form &form)
 {
 	if (this->_grade > form.getGradeSign())
 	{
-		// couldnt bc of grade
+		std::cout << this->getName() << " couldn't sign " << form.getName() << "'s official form";
+		std::cout << " because the bureaucrat don't have the required grade to sign." << std::endl;
 	}
-	else if (form.get_sign_bool())
+	else if (form.get_sign_bool() == TRUE)
 	{
-		// couldnt bc already signed
+		std::cout << this->getName() << " couldn't sign " << form.getName() << "'s official form";
+		std::cout << " because the form is already signed." << std::endl;
 	}
 	else
 	{
-		//sign form
-		// form.besigned(*this);
-	}
-}*/
-
-void	Bureaucrat::signForm(int ok, std::string name_form) {
-	if (ok == 0)
-		std::cout << this->getName() << " signed " << name_form << "'s official form" << std::endl;
-	else if (ok == 1) {
-		std::cout << this->getName() << " couldn't sign " << name_form << "'s official form";
-		std::cout << " because the bureaucrat don't have the required grade to sign." << std::endl;
-	}
-	else if (ok == 2) {
-		std::cout << this->getName() << " couldn't sign " << name_form << "'s official form";
-		std::cout << " because the form is already signed." << std::endl;
+		std::cout << this->getName() << " signed " << form.getName() << "'s official form" << std::endl;
+		form.beSigned(*this);
 	}
 }
 

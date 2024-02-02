@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:21:09 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/11 02:42:32 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/02 02:59:30 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,15 @@ void test1(const std::string &form_name, const std::string &target)
 	std::cout << std::endl;
 	std::cout << GREEN "[Test] " << form_name << RESET << std::endl;
 	std::cout << std::endl;
-
 	
 	try {
-		Intern someRandomIntern;
-		AForm* rrf;
-		rrf = someRandomIntern.makeForm(form_name, target);
+		Intern random_intern;
+		AForm* form;
+		form = random_intern.makeForm(form_name, target);
 		
 		Bureaucrat boss("takeshi", 1);
-		boss.signForm(*rrf);
-		boss.executeForm(*rrf);
+		boss.signForm(*form);
+		boss.executeForm(*form);
 	}
 	catch (std::exception & e) {
 		std::cerr << "Error : " << e.what() << std::endl;
