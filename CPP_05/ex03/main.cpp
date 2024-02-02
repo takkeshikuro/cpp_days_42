@@ -35,6 +35,7 @@ void test1(const std::string &form_name, const std::string &target)
 		Bureaucrat boss("takeshi", 1);
 		boss.signForm(*form);
 		boss.executeForm(*form);
+		delete form;
 	}
 	catch (std::exception & e) {
 		std::cerr << "Error : " << e.what() << std::endl;
