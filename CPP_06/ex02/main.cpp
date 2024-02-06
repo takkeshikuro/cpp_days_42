@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 04:33:51 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/24 02:37:04 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/06 05:45:02 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,12 @@ Base * generate(void)
 	switch (choice)
 	{
 		case 0 :
-//			std::cout << "spawn:A\n";
 			instance = new A();
 			break;
 		case 1 :
-//			std::cout << "spawn:B\n";
 			instance = new B();
 			break;
 		case 2 :
-//			std::cout << "spawn:C\n";
 			instance = new C();
 			break; 
 	}
@@ -42,16 +39,28 @@ void    identify(Base* p)
 {
 	if (dynamic_cast<A*>(p))
 		std::cout << "(*) type = A\n";
-	else if (dynamic_cast<B*>(p))
-		std::cout << "(*) type = B\n";
-	else if (dynamic_cast<C*>(p))
-		std::cout << "(*) type = C\n";
+	else 
+	{
+		if (dynamic_cast<B*>(p)) {
+			std::cout << "(*) type = B\n";
+			return ;
+		}
+		else 
+		{
+			if (dynamic_cast<C*>(p)) {
+				std::cout << "(*) type = C\n";
+				return ;
+			}
+			else
+				std::cout << "ERROR" << std::endl;
+		}
+	}
 }
 
 void	identify(Base& p) {
 	try 
 	{
-		A& ok_a = dynamic_cast<A&>(p);
+		A &ok_a = dynamic_cast<A&>(p);
 		(void)ok_a;
 		std::cout << "(&) type = A" << std::endl;
 	}
@@ -59,7 +68,7 @@ void	identify(Base& p) {
 	{
 		try 
 		{
-			B& ok_b = dynamic_cast<B&>(p);
+			B &ok_b = dynamic_cast<B&>(p);
 			(void)ok_b;
 			std::cout << "(&) type = B" << std::endl;
 		}
@@ -67,7 +76,7 @@ void	identify(Base& p) {
 		{
 			try 
 			{
-				C& ok_c = dynamic_cast<C&>(p);
+				C &ok_c = dynamic_cast<C&>(p);
 				(void)ok_c;
 				std::cout << "(&) type = C" << std::endl;
 			}
@@ -86,4 +95,5 @@ int main()
 	Base *base = generate();
 	identify(base);
 	identify(*base);
+	delete base;
 }

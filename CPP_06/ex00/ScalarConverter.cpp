@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 05:28:41 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/18 02:25:07 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/06 07:58:04 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ void print_int_convert(const std::string &value)
 		std::cout << "int : " << i << std::endl;
 	else
 		std::cout << "int : impossible" << std::endl;
-	std::cout << "float : " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
-	std::cout << "double : " << std::fixed << std::setprecision(1) << d << "" << std::endl;
+	std::cout << "float : " << f << "f" << std::endl;
+	std::cout << "double : " << d << ".0" << std::endl;
 }
 
 void	print_float_convert(const std::string &value)
@@ -61,8 +61,8 @@ void	print_float_convert(const std::string &value)
 		std::cout << "int : " << i << std::endl;
 	else
 		std::cout << "int : impossible" << std::endl;
-	std::cout << "float : " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
-	std::cout << "double : " << std::fixed << std::setprecision(1) << d << std::endl;
+	std::cout << "ok float : " << f << "f" << std::endl;
+	std::cout << "double : " << d << std::endl;
 }
 
 void	print_double_convert(const std::string &value)
@@ -80,8 +80,8 @@ void	print_double_convert(const std::string &value)
 		std::cout << "int : " << i << std::endl;
 	else
 		std::cout << "int : impossible" << std::endl;
-	std::cout << "float : " << std::fixed << std::setprecision(1) << f << "f" << std::endl;;
-	std::cout << "double : " << std::fixed << std::setprecision(1) << d << std::endl;
+	std::cout << "float : " << f << "f" << std::endl;;
+	std::cout << "ok double : " << d << std::endl;
 }
 
 void print_char_convert(char c)
@@ -92,8 +92,8 @@ void print_char_convert(char c)
 	
 	std::cout << "char : '" << c << "'" << std::endl;
 	std::cout << "int : " << i << std::endl;
-	std::cout << "float : " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
-	std::cout << "double : " << std::fixed << std::setprecision(1) << d << std::endl;
+	std::cout << "float : " << f << "f" << std::endl;
+	std::cout << "double : " << d << std::endl;
 }
 
 void print_special(const std::string &value)
@@ -128,7 +128,7 @@ void print_special(const std::string &value)
 	}
 }
 
-short	get_type(const std::string &value)
+int	get_type(const std::string &value)
 {
 	if (value.size() == 1)
 	{
@@ -157,7 +157,7 @@ void ScalarConverter::convert(const std::string &value)
 	if (value.size() == 0)
 		throw invalid_input_exeption();
 	
-	short type = get_type(value);
+	int type = get_type(value);
 	switch (type)
 	{
 		case 1 :
