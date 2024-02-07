@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 05:28:41 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/02/06 07:58:04 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/06 08:33:40 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	print_float_convert(const std::string &value)
 		std::cout << "int : " << i << std::endl;
 	else
 		std::cout << "int : impossible" << std::endl;
-	std::cout << "ok float : " << f << "f" << std::endl;
+	std::cout << "float : " << f << "f" << std::endl;
 	std::cout << "double : " << d << std::endl;
 }
 
@@ -81,7 +81,7 @@ void	print_double_convert(const std::string &value)
 	else
 		std::cout << "int : impossible" << std::endl;
 	std::cout << "float : " << f << "f" << std::endl;;
-	std::cout << "ok double : " << d << std::endl;
+	std::cout << "double : " << d << std::endl;
 }
 
 void print_char_convert(char c)
@@ -93,7 +93,7 @@ void print_char_convert(char c)
 	std::cout << "char : '" << c << "'" << std::endl;
 	std::cout << "int : " << i << std::endl;
 	std::cout << "float : " << f << "f" << std::endl;
-	std::cout << "double : " << d << std::endl;
+	std::cout << "double : " << d << ".0" << std::endl;
 }
 
 void print_special(const std::string &value)

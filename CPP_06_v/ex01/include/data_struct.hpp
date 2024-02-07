@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   data_struct.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/18 01:25:29 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/18 02:44:42 by tmorikaw         ###   ########.fr       */
+/*   Created: 2024/01/18 02:25:17 by tmorikaw          #+#    #+#             */
+/*   Updated: 2024/02/07 00:37:48 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_HPP
-# define SERIALIZER_HPP
+#ifndef DATA_STRUCT_H
+# define DATA_STRUCT_H
 
-#include <iostream>
-#include <iomanip>
-#include <stdint.h>
+#include <string>
 
 
-#include "data_struct.hpp"
+typedef struct s_data {
+	int		i_int;
+	char	c_char;
+}          Data;
 
-class Serializer {
-	public :
-		static uintptr_t serialize(Data* ptr);
-		static Data* deserialize(uintptr_t raw);
-		
-	private :
-		Serializer();
-		Serializer(Serializer const &cpy);
-		Serializer& operator=(Serializer const &cpy);
-		~Serializer();
-
-};
 
 #endif

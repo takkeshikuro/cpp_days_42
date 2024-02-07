@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 04:33:51 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/02/06 05:45:02 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/07 00:49:22 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,25 +57,23 @@ void    identify(Base* p)
 	}
 }
 
-void	identify(Base& p) {
-	try 
-	{
+void	identify(Base& p) 
+{
+	try {
 		A &ok_a = dynamic_cast<A&>(p);
 		(void)ok_a;
 		std::cout << "(&) type = A" << std::endl;
 	}
 	catch (const std::exception& e) 
 	{
-		try 
-		{
+		try {
 			B &ok_b = dynamic_cast<B&>(p);
 			(void)ok_b;
 			std::cout << "(&) type = B" << std::endl;
 		}
 		catch (const std::exception& e) 
 		{
-			try 
-			{
+			try  {
 				C &ok_c = dynamic_cast<C&>(p);
 				(void)ok_c;
 				std::cout << "(&) type = C" << std::endl;

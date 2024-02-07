@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 02:41:35 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/02/06 05:19:47 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/07 00:43:03 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,20 @@
 int	main()
 {
 	Data data;
-	uintptr_t stock = 0;
-
-	data.ok = 42;
-	std::cout << "data = " << data.ok << std::endl;
-
-	stock = Serializer::serialize(&data);
+	data.i_int = 42;
+	data.c_char = 'w';
+	
+	std::cout << "data.i_int = " << data.i_int << std::endl;
+	std::cout << "data.c_char = " << data.c_char << std::endl;
+	std::cout << std::endl;
+	
+	uintptr_t stock = Serializer::serialize(&data);
+	
 	std::cout << "data serialized : " << stock << std::endl;
-
+	std::cout << std::endl;
+	
 	Data *data2 = Serializer::deserialize(stock);
-	std::cout << "data deserialized : " << data2->ok << std::endl;
+	
+	std::cout << "data2->i_int = " << data2->i_int << std::endl;
+	std::cout << "data2->c_char = " << data2->c_char << std::endl;
 }
