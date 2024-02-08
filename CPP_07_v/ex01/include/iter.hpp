@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keshikuro <keshikuro@student.42.fr>        +#+  +:+       +#+        */
+/*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 06:50:20 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/24 15:14:02 by keshikuro        ###   ########.fr       */
+/*   Updated: 2024/02/08 03:33:10 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,27 @@
 #include <iostream>
 
 template <typename T>
-void    function_test(T const &tab_content, int i)
+void    function_test(T const &tab_content)
 {
-    std::cout << "tab[" << i << "] = " << tab_content << std::endl;
+    std::cout << "tab content = " << tab_content << std::endl;
     return ;
 }
 
 template <typename T>
-void    iter(T *arr, int tab_size, void (*f)(T const &, int)) 
+void    iter(T *arr, int tab_size, void (*f)(T const &)) 
 {
     for (int i = 0; i < tab_size; i++)
-        f(arr[i], i);
+        f(arr[i]);
     return;
 }
+
+// template <typename T, typename F>
+// void    iter(T *arr, int tab_size, F fun) 
+// {
+//     for (int i = 0; i < tab_size; i++)
+//         fun(arr[i], i);
+//     return;
+// }
 
 
 #endif

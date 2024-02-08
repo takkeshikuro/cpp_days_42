@@ -18,3 +18,6 @@ voir  si ex01/ex02 cpp 05, dans le main on fait
 
 form.beSigned() ou bureaucrat.signForm()
 pour signer un formulaire / +1 pour signForm comme dans ex02 mais a voir.
+
+42-2000-4000
+->test date dans input.txt bitcoin

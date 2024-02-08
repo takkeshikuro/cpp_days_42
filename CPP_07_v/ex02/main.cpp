@@ -6,12 +6,12 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 01:18:10 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/26 00:47:47 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/08 03:01:40 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/Array.hpp"
-//#include <random>
+
 
 #define MAX_VAL 750
 
@@ -102,4 +102,5 @@ int main() {
 	}
 	delete [] mirror;//
 	return 0;
-} */
+} 
+ */

@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 00:34:02 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/25 02:00:26 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/08 03:01:52 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define ARRAY_HPP
 
 #include <iostream>
-
+#include <cstdlib>
 
 template <typename T>
 class Array {
@@ -41,7 +41,7 @@ class Array {
 
 
 template <typename T>
-Array<T>::Array() : arr_ptr(NULL), arr_size(0) {} //(nullptr)
+Array<T>::Array() : arr_ptr(NULL), arr_size(0) {}
 
 template <typename T>
 Array<T>::Array(unsigned int n) : arr_size(n) {
