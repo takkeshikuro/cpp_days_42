@@ -48,11 +48,22 @@ int &Span::operator[](unsigned int index)
 	return arr_span[index];
 }
 
-void    Span::addNumber(unsigned int i_add) {
+//////////////////////////////////////////////////////////////////////
+
+void    Span::addNumber(unsigned int i_add)
+{
 	if (arr_span.size() >= _N)
 		throw ContainerFullException();
-	else {
+	else
 		arr_span.push_back(i_add);
+}
+
+void	Span::addNumber(unsigned int begin, unsigned int end)
+{
+	if (end <= begin || (arr_span.size() + (end - begin)) > _N)
+		throw ContainerFullException();
+	for (size_t i = begin; i <= end; ++i) {
+		arr_span.push_back(i);
 	}
 }
 
@@ -62,8 +73,15 @@ void Span::addNumber(const std::vector<int> &vector) {
 	arr_span.insert(arr_span.end(), vector.begin(), vector.end());
 }
 
+void	Span::display_span()
+{
+	for (size_t i = 0; i < arr_span.size(); ++i) {
+		std::cout << "arr[" << i << "] = " << arr_span[i] << std::endl;
+	}
+}
 
-int	Span::longestSpan() {
+int	Span::longestSpan()
+{
 	if (arr_span.size() < 2)
 		throw ArrListTooShort();
 	
@@ -74,7 +92,8 @@ int	Span::longestSpan() {
 	return l_span;
 }
 
-int	Span::shortestSpan() {
+int	Span::shortestSpan()
+{
 	if (arr_span.size() < 2)
 		throw ArrListTooShort();
 	
@@ -90,5 +109,3 @@ int	Span::shortestSpan() {
 	}
 	return s_span;
 }
-
-

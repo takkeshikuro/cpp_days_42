@@ -22,9 +22,9 @@ int main()
 		sp.addNumber(17);
 		sp.addNumber(9);
 		sp.addNumber(11);
-	//	sp.addNumber(42);
-		std::cout << sp.shortestSpan() << std::endl;
-		std::cout << sp.longestSpan() << std::endl;
+		std::cout << "shortest span found : " << sp.shortestSpan() << std::endl;
+		std::cout << "longest span found : " << sp.longestSpan() << std::endl;
+		sp.display_span();
 	}
 	catch (const std::exception &e) {
 		std::cerr << "Error : " << e.what() << std::endl;
@@ -32,11 +32,10 @@ int main()
 	try {
 		std::cout << std::endl << "TEST WITH 10000 VALUE :" << std::endl;
 		Span sp = Span(10000);
-		for (int i = 0; i < 10000; ++i) {
-			sp.addNumber(i);
-		};
-		std::cout << sp.shortestSpan() << std::endl;
-		std::cout << sp.longestSpan() << std::endl;
+		sp.addNumber(1, 10000);
+		std::cout << "shortest span found : " << sp.shortestSpan() << std::endl;
+		std::cout << "longest span found : " << sp.longestSpan() << std::endl;
+	//	sp.display_span();
 	}
 	catch (const std::exception &e) {
 		std::cerr << "Error : " << e.what() << std::endl;

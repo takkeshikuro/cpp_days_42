@@ -25,15 +25,12 @@ class OccurenceNotFound : public std::exception {
 };
 
 template <typename T>
-void   easyfind(T const &container, int i) {
-
-	typename T::const_iterator it = std::find(container.begin(), container.end(), i);
-	
-	if (it != container.end())
+void   easyfind(T &container, int i)
+{
+	if (std::find(container.begin(), container.end(), i) == container.end())
+		throw OccurenceNotFound();
+	else
 		std::cout << "occurence found for : " << i << std::endl;
-    else
-    	throw OccurenceNotFound();
 }
-
 
 #endif

@@ -35,18 +35,24 @@ class Span {
 			public :
 				virtual const char *what() const throw();
 		};
+
 		int &operator[](unsigned int index);
 
 		int	getSize() const;
+		
 		void addNumber(unsigned int i_add);
+		void addNumber(unsigned int begin, unsigned int end);
 		void addNumber(const std::vector<int> &vector);
+
 		int shortestSpan();
 		int longestSpan();
-		
+		void	display_span();
+
 	private :
-		unsigned int _N;
-		std::vector<int> arr_span;
 		Span();
+		unsigned int		_N;
+		std::vector<int>	arr_span;
+		
 };
 
 #endif

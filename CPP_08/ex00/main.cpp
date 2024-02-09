@@ -39,7 +39,6 @@ int main() {
 
 		::easyfind(list_test, 2);
 		::easyfind(list_test, 4);
-
 	}
 	catch (const std::exception &e){
 		std::cerr << "error " << e.what() << std::endl; 
