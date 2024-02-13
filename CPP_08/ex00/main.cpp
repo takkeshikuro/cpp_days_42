@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 05:02:03 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/26 01:08:45 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/13 16:46:24 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@ const char * OccurenceNotFound::what() const throw() {
 	return "no occurence found";
 }
 
-int main() {
-
-
+int main() 
+{
 	try {
 		std::vector<int> vector_test;
 		vector_test.push_back(10);

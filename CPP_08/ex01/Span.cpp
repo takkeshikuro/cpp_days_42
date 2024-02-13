@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 01:15:14 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/26 02:40:47 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/13 16:41:56 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,19 +58,13 @@ void    Span::addNumber(unsigned int i_add)
 		arr_span.push_back(i_add);
 }
 
-void	Span::addNumber(unsigned int begin, unsigned int end)
+void    Span::addNumbers(std::vector<int>::const_iterator start, std::vector<int>::const_iterator end, std::vector<int> n)
 {
-	if (end <= begin || (arr_span.size() + (end - begin)) > _N)
-		throw ContainerFullException();
-	for (size_t i = begin; i <= end; ++i) {
-		arr_span.push_back(i);
-	}
-}
-
-void Span::addNumber(const std::vector<int> &vector) {
-	if (arr_span.size() + vector.size() > _N)
-		throw ContainerFullException();
-	arr_span.insert(arr_span.end(), vector.begin(), vector.end());
+    if (n.size() > this->_N)
+        throw ContainerFullException();
+    
+    this->arr_span.insert(this->arr_span.begin(), start, end);
+    return ;
 }
 
 void	Span::display_span()

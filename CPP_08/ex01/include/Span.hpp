@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 01:09:41 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/26 02:39:56 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/13 16:42:01 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,7 @@ class Span {
 		int	getSize() const;
 		
 		void addNumber(unsigned int i_add);
-		void addNumber(unsigned int begin, unsigned int end);
-		void addNumber(const std::vector<int> &vector);
+		void addNumbers(std::vector<int>::const_iterator start, std::vector<int>::const_iterator end, std::vector<int> n);
 
 		int shortestSpan();
 		int longestSpan();
