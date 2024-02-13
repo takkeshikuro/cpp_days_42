@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keshikuro <keshikuro@student.42.fr>        +#+  +:+       +#+        */
+/*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 07:02:14 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/30 10:00:21 by keshikuro        ###   ########.fr       */
+/*   Updated: 2024/02/13 18:05:51 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ class Data {
 		void    read_data_file(std::ifstream &ifs);
 		float	get_price(std::string date) const;
 		void	print_line(std::string date, float exchange_rate);
-		
+		bool     parse_value(std::string date);
+
 	private :
 		
 		std::map<std::string, float> data_history;

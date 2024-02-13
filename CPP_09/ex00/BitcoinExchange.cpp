@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 07:22:13 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/26 09:19:25 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/13 18:05:54 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,14 @@ const char *Data::GetDataLineError::what() const throw() {
 	return "getline from data.csv failed during process.";
 }
 
+// (1) read data.csv and stock all data
 void	Data::read_data_file(std::ifstream &ifs) 
 {	
 	std::string line_buf;
 	int i = 0;
 	while (std::getline(ifs, line_buf))
 	{
-		if (i != 0) // pour skip la premiere ligne
+		if (i != 0)
 		{
 			
 			if (ifs.fail())
@@ -59,32 +60,50 @@ void	Data::read_data_file(std::ifstream &ifs)
 	return ;
 }
 
-float	Data::get_price(std::string date) const {
-	
+void	Data::print_line(std::string date, float exchange_rate) 
+{
+	float price;
 	std::map<std::string, float>::const_iterator it = data_history.find(date);
+	
 	if (it != data_history.end())
-		return it->second;
-	else {
+		price = it->second;
+	else 
+	{
 		std::map<std::string, float>::const_iterator close_before = data_history.lower_bound(date);
-		if (close_before == data_history.begin())
-			return -1;
-		else {
-			--close_before;
-			return close_before->second;
-		}
-	}
+		--close_before;
+		price = close_before->second;
+	}	
+	std::cout << date << " => " << exchange_rate << " = " << (price * exchange_rate) << std::endl;
 }
 
-void	Data::print_line(std::string date, float exchange_rate) {
-	float price = get_price(date);
-	if (price == -1)
-		std::cout << "Error: bad input => " << date << std::endl;
-	else if (exchange_rate < 0)
-		std::cout << "Error: not a positive number." << std::endl;
-	else if (exchange_rate > 1000)
-		std::cout << "Error: too large a number." << std::endl;
-	else
-		std::cout << date << " => " << exchange_rate << " = " << (price * exchange_rate) << std::endl;
+
+bool   Data::parse_value(std::string date)
+{
+    std::string year = date.substr(0, 4);
+    std::string month = date.substr(5, 2);
+    std::string day  = date.substr(8, 2);
+
+    if (std::atoi(year.c_str()) < 2009 || std::atoi(year.c_str()) > 2024)
+		return 1;
+    if (std::atoi(month.c_str()) < 1 || std::atoi(month.c_str()) > 12)
+		return 1;
+    if (std::atoi(day.c_str()) < 1 || std::atoi(day.c_str()) > 31)
+		return 1;
+    if (std::atoi(month.c_str()) == 4 || std::atoi(month.c_str()) == 5 
+        || std::atoi(month.c_str()) == 9 || std::atoi(month.c_str()) == 11)
+    {
+        if (std::atoi(day.c_str()) > 30)
+			return 1;
+    }
+    if (std::atoi(month.c_str()) == 2)
+    {
+        if (std::atoi(day.c_str()) > 29)
+			return 1;
+	}
+	if (std::atoi(year.c_str()) == 2009 && std::atoi(month.c_str()) == 1  \
+			&& std::atoi(day.c_str()) == 1)
+		return 1;
+	return 0;
 }
 
 /*std::getline(iss, date, ',') : Cette fonction utilise iss 

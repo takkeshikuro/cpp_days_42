@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keshikuro <keshikuro@student.42.fr>        +#+  +:+       +#+        */
+/*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 06:48:48 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/30 10:02:41 by keshikuro        ###   ########.fr       */
+/*   Updated: 2024/02/13 17:49:52 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,17 @@ void	starting_point(std::ifstream &ifs_input)
 			std::string date;
 			float exchange_rate = 0;
 			std::getline(iss >> std::ws, date, '|') && (iss >> exchange_rate);
-			
-			if (exchange_rate > 1000)
-				data.print_line(date, 1001);
-			else
-				data.print_line(date, exchange_rate);
+			if (data.parse_value(date))
+				std::cout << "Error: bad input => " << date << std::endl;
+			else 
+			{
+				if (exchange_rate > 1000)
+					std::cout << "Error: too large a number." << std::endl;
+				else if (exchange_rate < 0)
+					std::cout << "Error: not a positive number." << std::endl;
+				else
+					data.print_line(date, exchange_rate);
+			}
 		}
 		i++;
 	}
@@ -57,7 +63,7 @@ int main(int ac, char **av)
 			throw Data::BadInput();
 	}
 	catch (const std::exception &e) {
-		std::cerr << "error :" << e.what() << std::endl;
+		std::cerr << "Error :" << e.what() << std::endl;
 	}
 
 }
