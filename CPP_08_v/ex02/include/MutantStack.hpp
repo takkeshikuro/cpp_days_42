@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 04:18:36 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/01/26 05:09:41 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/15 04:58:22 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,4 @@ typename MutantStack<T>::iterator MutantStack<T>::end() {
 	return std::stack<T>::c.end();
 }
 
-
 #endif
-

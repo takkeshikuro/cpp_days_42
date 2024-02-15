@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 05:02:03 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/02/13 16:46:24 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/15 05:01:49 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int main()
 		vector_test.push_back(20);
 		vector_test.push_back(30);
 	
-		::easyfind(vector_test, 10);
-		::easyfind(vector_test, 40);
+		easyfind(vector_test, 10);
+		easyfind(vector_test, 40);
 	}
 	catch (const std::exception &e) {
 		std::cerr << "error : " << e.what() << std::endl;
@@ -36,8 +36,8 @@ int main()
 		list_test.push_back(2);
 		list_test.push_back(3);
 
-		::easyfind(list_test, 2);
-		::easyfind(list_test, 4);
+		easyfind(list_test, 2);
+		easyfind(list_test, 4);
 	}
 	catch (const std::exception &e){
 		std::cerr << "error " << e.what() << std::endl; 
