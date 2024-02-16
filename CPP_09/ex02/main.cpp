@@ -26,10 +26,8 @@ int main(int ac, char **av)
 		const std::clock_t c_end_list = std::clock();
 		
 		std::cout << sequence << std::endl << std::endl;
-
-		std::cout  << "Time to process a range of " << (ac - 1) << " elements with std::vector : " << (c_end_vector - c_start_vector) << " us" << std::endl;
-		std::cout << "Time to process a range of " << (ac - 1) << " elements with std::list : " << (c_end_list - c_start_list) << " us" << std::endl;
-
+		sequence.print_summary(ac - 1, c_end_vector - c_start_vector, "std::vector");
+		sequence.print_summary(ac - 1, c_end_list - c_start_list, "std::list");
 	}
 	catch (const std::exception &e) {
 		std::cerr << "Error : " << e.what() << std::endl;
