@@ -12,10 +12,16 @@
 
 #include "include/PmergeMe.hpp"
 
-//cette fonction fusionne les deux vecteurs triés first et second en insérant les éléments 
-//de second dans first tout en conservant l'ordre croissant. La séquence de Jacobsthal est 
-//utilisée pour déterminer les positions d'insertion afin de minimiser le nombre de 
-//comparaisons nécessaires.
+/*	std::cerr << "first : |";
+	for (std::vector<int>::iterator ok = first.begin(); ok != first.end(); ++ok)
+		std::cerr << *ok << " ,";
+	std::cerr<<"|\nsecond : |";
+	for (std::vector<int>::iterator ok2 = second.begin(); ok2 != second.end(); ++ok2)
+		std::cerr << *ok2 << " ,";
+	std::cerr << "|check end" << std::endl;
+	std::cout<<"i = "<<i<<" jacob[i] = "<<jacob[i]<<"\n";
+	std::cout<<"if ("<<size<<" >= "<<jacob[i]<<")\n";*/
+
 void	PmergeMe::merge_all_vct(std::vector<int> &first, std::vector<int> &second)
 {
 	int jacob[11] = {1, 3, 5, 11, 21, 43, 85, 171, 341, 683, 1365};
@@ -23,28 +29,34 @@ void	PmergeMe::merge_all_vct(std::vector<int> &first, std::vector<int> &second)
 	int size = first.size();
 
 	_ite_s_vct = second.begin();
-	std::vector<int>::iterator temps = _ite_s_vct;
-
+	std::vector<int>::iterator tmp_second = _ite_s_vct;
 	first.insert(first.begin(), *_ite_s_vct);
-	
+
 	while (i < 11)
 	{
 		if (size >= jacob[i])
 		{
 			_ite_f_vct = first.begin();
-			temps = _ite_s_vct;
+			tmp_second = second.begin();
+
+			// looking for [second vector]'s element to insert into first
 			for (int x = 1; x != jacob[i]; x++)
-				temps++;
-			while (*_ite_f_vct < *temps)
+				tmp_second++;
+
+			//looking for the good place to insert
+			while (*_ite_f_vct < *tmp_second)
 				_ite_f_vct++;
-			first.insert(_ite_f_vct, *temps);
-			for (int x = 1; x != (jacob[i] - jacob[i - 1]); x++)
-			{
-				temps--;
+
+			// then insert
+			first.insert(_ite_f_vct, *tmp_second);
+			
+			// same job for second's element--;
+			for (int x = 1; x != (jacob[i] - jacob[i - 1]); x++) {
+				tmp_second--;
 				_ite_f_vct = first.begin();
-				while (*_ite_f_vct < *temps)
+				while (*_ite_f_vct < *tmp_second)
 					_ite_f_vct++;
-				first.insert(_ite_f_vct, *temps);
+				first.insert(_ite_f_vct, *tmp_second);
 			}
 		}
 		else
@@ -52,20 +64,20 @@ void	PmergeMe::merge_all_vct(std::vector<int> &first, std::vector<int> &second)
 		i++;
 	}
 	
-	temps = _ite_s_vct;
+	std::vector<int>::iterator tmp_surplus = second.begin();
 	for (int x = 0; x != jacob[i - 1]; x++)
-		temps++;
-	
-	while (temps != second.end())
+		tmp_surplus++;
+	// si il reste des elements restant dans second a insert dans first
+	while (tmp_surplus != second.end())
 	{
 		_ite_f_vct = first.begin();
-		while (*_ite_f_vct < *temps && _ite_f_vct != first.end())
+		while (*_ite_f_vct < *tmp_surplus && _ite_f_vct != first.end())
 			_ite_f_vct++;
 		if (_ite_f_vct != first.end())
-			first.insert(_ite_f_vct, *temps);
+			first.insert(_ite_f_vct, *tmp_surplus);
 		else
-			first.push_back(*temps);
-		temps++;
+			first.push_back(*tmp_surplus);
+		tmp_surplus++;
 	}
 }
 
@@ -79,8 +91,6 @@ void	PmergeMe::sort_first_vct(std::vector<int> &first, std::vector<int> &second)
 	std::vector<int>::iterator itsn = _ite_s_vct;
 	++itsn;
 
-	//Si l'élément actuel est inférieur à l'élément précédent, elle échange les éléments de 
-	//first et de second correspondants à l'aide d'une variable temporaire.
 	while (itfn != first.end())
 	{
 		if (*_ite_f_vct > *itfn)
@@ -118,8 +128,7 @@ void    PmergeMe::sort_vct()
 	std::vector<int>::iterator ite = _vector.begin();
 	
 	//Si l'élément actuel est plus petit que le suivant, il est ajouté à second, 
-	//sinon, il est ajouté à first. Cela divise efficacement le vecteur 
-	//_vector en deux sous-vecteurs alternés.
+	//sinon, il est ajouté à first.
 	while (ite != _vector.end())
 	{
 		std::vector<int>::iterator itn = ite;
