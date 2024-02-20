@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 06:48:48 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/02/13 17:49:52 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/20 04:44:37 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void	starting_point(std::ifstream &ifs_input)
 		}
 		i++;
 	}
-
 }
 
 int main(int ac, char **av)
@@ -65,5 +64,4 @@ int main(int ac, char **av)
 	catch (const std::exception &e) {
 		std::cerr << "Error :" << e.what() << std::endl;
 	}
-
 }

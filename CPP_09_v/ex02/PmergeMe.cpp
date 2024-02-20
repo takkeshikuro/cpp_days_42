@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 05:46:36 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/02/15 10:44:25 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/20 05:19:35 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ PmergeMe &PmergeMe::operator=(PmergeMe const &cpy) {
 
 PmergeMe::PmergeMe(int ac, char **av) 
 {
-	if (ac < 2)
+	if (ac < 2 || !*av || !av)
 		throw ErrorBadInput();
 	for (int i = 1; i < ac; ++i)
 	{

@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 06:56:06 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/02/15 10:44:29 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/20 04:31:27 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,10 @@ class PmergeMe {
 		void	print_before();
 		void	print_summary(int nb_range, int time, std::string container_name);
 		
-		void	sort_vct();
-		void	sort_first_vct(std::vector<int> &first, std::vector<int> &second);
-		void	merge_all_vct(std::vector<int> &first, std::vector<int> &second);
+		void	sort_vct(std::vector<int>::iterator first, std::vector<int>::iterator last);
 		void	display_vct();
 		
-		void	sort_lst();
-		void	sort_first_lst(std::list<int> &first, std::list<int> &second);
-		void	merge_all_lst(std::list<int> &first, std::list<int> &second);
+		void	sort_lst(std::list<int>::iterator first, std::list<int>::iterator last);
 		void	display_lst();
 		
 		std::vector<int>::iterator get_begin_vct();
@@ -70,14 +66,8 @@ class PmergeMe {
 		PmergeMe();
 		PmergeMe(PmergeMe const &cpy);
 		PmergeMe &operator=(PmergeMe const &cpy);
-		
 		std::vector<int> _vector;
-		std::vector<int>::iterator _ite_f_vct;
-		std::vector<int>::iterator _ite_s_vct;
-
 		std::list<int> _list;
-		std::list<int>::iterator _ite_f_lst;
-		std::list<int>::iterator _ite_s_lst;
 };
 
 std::ostream	&operator<<(std::ostream &o, PmergeMe &cpy);

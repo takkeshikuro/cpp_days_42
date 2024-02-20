@@ -6,7 +6,7 @@
 /*   By: tmorikaw <tmorikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 07:22:13 by tmorikaw          #+#    #+#             */
-/*   Updated: 2024/02/13 18:05:54 by tmorikaw         ###   ########.fr       */
+/*   Updated: 2024/02/20 04:50:37 by tmorikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,10 +79,12 @@ void	Data::print_line(std::string date, float exchange_rate)
 
 bool   Data::parse_value(std::string date)
 {
+	if (date.size() != 11)
+		return 1;
     std::string year = date.substr(0, 4);
     std::string month = date.substr(5, 2);
     std::string day  = date.substr(8, 2);
-
+	
     if (std::atoi(year.c_str()) < 2009 || std::atoi(year.c_str()) > 2024)
 		return 1;
     if (std::atoi(month.c_str()) < 1 || std::atoi(month.c_str()) > 12)
@@ -90,13 +92,11 @@ bool   Data::parse_value(std::string date)
     if (std::atoi(day.c_str()) < 1 || std::atoi(day.c_str()) > 31)
 		return 1;
     if (std::atoi(month.c_str()) == 4 || std::atoi(month.c_str()) == 5 
-        || std::atoi(month.c_str()) == 9 || std::atoi(month.c_str()) == 11)
-    {
+        || std::atoi(month.c_str()) == 9 || std::atoi(month.c_str()) == 11) {
         if (std::atoi(day.c_str()) > 30)
 			return 1;
     }
-    if (std::atoi(month.c_str()) == 2)
-    {
+    if (std::atoi(month.c_str()) == 2) {
         if (std::atoi(day.c_str()) > 29)
 			return 1;
 	}
@@ -105,15 +105,3 @@ bool   Data::parse_value(std::string date)
 		return 1;
 	return 0;
 }
-
-/*std::getline(iss, date, ',') : Cette fonction utilise iss 
-pour extraire une sous-chaîne jusqu'à la première virgule (,) 
-rencontrée dans la ligne du fichier et stocke le résultat dans 
-la variable date.
-(iss >> price) : Cette expression utilise iss pour extraire un 
-nombre (le prix) à partir du flux, et stocke le résultat dans 
-la variable price.
-L'utilisation de std::istringstream permet de traiter chaque 
-ligne du fichier comme une chaîne de caractères, et nous pouvons
-extraire les parties de cette chaîne que nous souhaitons utiliser 
-(date et prix, dans ce cas).*/
